@@ -1,0 +1,142 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/veron10/storage/Project/FIFO_8b
+T_opt
+Z2 !s11d FIFO_8b_tb_sv_unit /home/veron10/storage/Project/FIFO_8b/work 1 fifo_if 1 /home/veron10/storage/Project/FIFO_8b/work 
+!s110 1752828541
+VYiY^`]KHzLfO1b8A5FV><0
+Z3 04 10 4 work FIFO_8b_tb fast 0
+=1-001cc447b718-687a0a7d-236ff-540b
+Z4 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2_1;73
+R1
+T_opt1
+R2
+!s110 1753064658
+VI>>I0[O34`Da>njE>9SF50
+R3
+=1-001cc447b718-687da4d2-81d43-3440
+R4
+o-quiet -auto_acc_if_foreign -work work +acc
+R5
+n@_opt1
+R6
+R1
+vFIFO_8b
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1753092909
+!i10b 1
+!s100 YoX@DW6ZFN@QZH=K?KO^C3
+I031]?SaET2=0>>EFF:HV00
+S1
+R1
+w1752828478
+8FIFO_8b.sv
+FFIFO_8b.sv
+!i122 3
+L0 1 74
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z11 !s108 1753092909.000000
+!s107 FIFO_8b_tb.sv|FIFO_8b.sv|
+Z12 !s90 FIFO_8b.sv|FIFO_8b_tb.sv|
+!i113 0
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+n@f@i@f@o_8b
+vFIFO_8b_tb
+R7
+Z14 DXx4 work 18 FIFO_8b_tb_sv_unit 0 22 ZajaRl69M1c]fPiQAY8O^2
+R8
+R9
+r1
+!s85 0
+!i10b 1
+!s100 Y=ig]P3QP>VeKTAg^22P]3
+IKo]@FIW?ncOO]9Y1dli@]0
+Z15 !s105 FIFO_8b_tb_sv_unit
+S1
+R1
+Z16 w1752828508
+Z17 8FIFO_8b_tb.sv
+Z18 FFIFO_8b_tb.sv
+!i122 3
+L0 238 85
+R10
+31
+R11
+Z19 !s107 FIFO_8b_tb.sv|FIFO_8b.sv|
+R12
+!i113 0
+R13
+R5
+n@f@i@f@o_8b_tb
+XFIFO_8b_tb_sv_unit
+!s115 fifo_if
+R7
+R8
+VZajaRl69M1c]fPiQAY8O^2
+r1
+!s85 0
+!i10b 1
+!s100 <Ik8__72ob]aNS?hI@M<@0
+IZajaRl69M1c]fPiQAY8O^2
+!i103 1
+S1
+R1
+R16
+R17
+R18
+!i122 3
+L0 16 0
+R10
+31
+R11
+R19
+R12
+!i113 0
+R13
+R5
+n@f@i@f@o_8b_tb_sv_unit
+Yfifo_if
+R15
+R14
+R7
+R8
+!i10b 1
+!s100 31?0jYH=:3LPR7JP]eGeX3
+IJo2jVi3WLMZ1:1^Ob;`LG3
+S1
+R1
+R16
+R17
+R18
+!i122 3
+L0 4 0
+R9
+R10
+r1
+!s85 0
+31
+R11
+R19
+R12
+!i113 0
+R13
+R5

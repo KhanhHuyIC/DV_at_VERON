@@ -1,0 +1,7 @@
+`include "base_seq.sv"
+`include "onehot_seq.sv"
+`include "pslverr_seq.sv"
+`include "paritychk_seq.sv"
+`include "wr_rst_rd_seq.sv"
+`include "register_enable_coverage_seq.sv"
+`include "register_hold_seq.sv"

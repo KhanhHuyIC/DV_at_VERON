@@ -1,0 +1,270 @@
+# vsim -c -voptargs="+acc" -assertdebug -debugDB -l log/base_test.log testbench -wlf waveform/base_test.wlf -do "log -r /*; run -all; quit" "+UVM_TESTNAME=base_test" 
+# Start time: 17:02:53 on Aug 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: ../RTL_Code/wait_state_shift_reg.sv(19): (vopt-2697) MSB -1 of part-select into 'wait_counter' is out of bounds.
+# ** Warning: ../RTL_Code/param_mux.sv(6): (vopt-13314) Defaulting port 'in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../RTL_Code/param_mux.sv(6): (vopt-13314) Defaulting port 'in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../RTL_Code/param_mux.sv(6): (vopt-13314) Defaulting port 'in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../RTL_Code/param_mux.sv(6): (vopt-13314) Defaulting port 'in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.apb_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.apb_m_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading work.apb_if(fast__2)
+# Loading work.apb_slave_timer(fast)
+# Loading work.param_d_ff(fast)
+# Loading work.apb_master_byte_masking(fast)
+# Loading work.mux_2_to_1(fast)
+# Loading work.wait_state_shift_reg(fast)
+# Loading work.param_d_ff(fast__1)
+# Loading work.timer_top(fast)
+# Loading work.clock_select(fast)
+# Loading work.clk_sel_channel(fast)
+# Loading work.param_mux(fast)
+# Loading work.posedge_detector(fast)
+# Loading work.param_d_ff(fast__2)
+# Loading work.negedge_detector(fast)
+# Loading work.param_mux(fast__1)
+# Loading work.param_mux(fast__2)
+# Loading work.pos_det_mode16(fast)
+# Loading work.control_logic(fast)
+# Loading work.priority_encoder(fast)
+# Loading work.high_level_detector(fast)
+# Loading work.low_level_detector(fast)
+# Loading work.comparator(fast)
+# Loading work.Timer_register(fast)
+# Loading work.TCNT(fast)
+# Loading work.param_d_ff(fast__3)
+# Loading work.TCOR(fast)
+# Loading work.param_d_ff(fast__4)
+# Loading work.COMP(fast)
+# Loading work.TCCR(fast)
+# Loading work.TCR(fast)
+# Loading work.TCSR(fast)
+# Loading work.param_mux(fast__3)
+# Loading work.apb_register(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'd'. The port definition is at: ../RTL_Code/param_d_ff.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/apb_pstrb_parity_check_register File: ../RTL_Code/apb_slave_timer.sv Line: 143
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'q'. The port definition is at: ../RTL_Code/param_d_ff.sv(9).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/apb_pstrb_parity_check_register File: ../RTL_Code/apb_slave_timer.sv Line: 143
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'i_addr'. The port definition is at: ../RTL_Code/timer_top.sv(25).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/ip_timer File: ../RTL_Code/apb_slave_timer.sv Line: 204
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'i_datain'. The port definition is at: ../RTL_Code/timer_top.sv(26).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/ip_timer File: ../RTL_Code/apb_slave_timer.sv Line: 204
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'o_mux_reg_to_bus_out'. The port definition is at: ../RTL_Code/timer_top.sv(46).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/ip_timer File: ../RTL_Code/apb_slave_timer.sv Line: 204
+# Loading /home/shared_folder/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database waveform/base_test.dbg.
+# log -r /*
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# Clock generation started at time 0
+# Clock initialized to 0 at time 0
+# Testbench: Starting UVM test at time 0
+# UVM_INFO ../tests/base_test.sv(12) @ 0: uvm_test_top [base_test] Constructor
+# UVM_INFO @ 0: reporter [RNTST] Running test base_test...
+# UVM_INFO ../model/Environment/system_env.sv(11) @ 0: uvm_test_top.env [apb_m_env] Constructor
+# UVM_INFO ../model/Environment/system_env.sv(16) @ 0: uvm_test_top.env [apb_m_env] Build phase
+# UVM_INFO ../model/Environment/apb_m_agent.sv(14) @ 0: uvm_test_top.env.agent [apb_m_agent] Constructor
+# UVM_INFO ../model/Environment/scoreboard.sv(31) @ 0: uvm_test_top.env.scb [apb_scoreboard] Constructor
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(11) @ 0: uvm_test_top.env.agent.monitor [apb_m_monitor] Constructor
+# UVM_INFO ../model/Environment/apb_m_driver.sv(9) @ 0: uvm_test_top.env.agent.driver [apb_m_driver] Constructor
+# UVM_INFO ../model/Environment/apb_m_sequencer.sv(7) @ 0: uvm_test_top.env.agent.sequencer [apb_m_sequencer] Constructor
+# UVM_INFO ../model/Environment/apb_m_agent.sv(30) @ 0: uvm_test_top.env.agent [apb_m_agent] Build phase
+# UVM_INFO ../model/Environment/apb_m_driver.sv(18) @ 0: uvm_test_top.env.agent.driver [apb_m_driver] Build phase
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(20) @ 0: uvm_test_top.env.agent.monitor [apb_m_monitor] Build phase
+# UVM_INFO ../model/Environment/apb_m_sequencer.sv(13) @ 0: uvm_test_top.env.agent.sequencer [apb_m_sequencer] Build phase
+# UVM_INFO ../model/Environment/scoreboard.sv(37) @ 0: uvm_test_top.env.scb [apb_scoreboard] Build phase
+# UVM_INFO ../model/Environment/apb_m_agent.sv(37) @ 0: uvm_test_top.env.agent [apb_m_agent] Connect phase
+# UVM_INFO ../model/Environment/system_env.sv(30) @ 0: uvm_test_top.env [apb_m_env] Connect phase
+# UVM_INFO ../tests/base_test.sv(28) @ 0: uvm_test_top [base_test] elab phase
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               base_test               -     @471 
+#   env                      apb_m_env               -     @478 
+#     agent                  apb_m_agent             -     @488 
+#       driver               apb_m_driver            -     @522 
+#         rsp_port           uvm_analysis_port       -     @537 
+#         seq_item_port      uvm_seq_item_pull_port  -     @529 
+#       monitor              apb_m_monitor           -     @515 
+#         collected_port     uvm_analysis_port       -     @659 
+#       sequencer            apb_m_sequencer         -     @545 
+#         rsp_export         uvm_analysis_export     -     @552 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @646 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     scb                    apb_scoreboard          -     @498 
+#       analysis_port        uvm_analysis_imp        -     @505 
+# --------------------------------------------------------------
+# UVM_INFO ../tests/base_test.sv(35) @ 0: uvm_test_top [base_test] run phase
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(29) @ 0: uvm_test_top.env.agent.monitor [apb_m_monitor] Run phase
+# UVM_INFO ../model/Environment/apb_m_driver.sv(26) @ 0: uvm_test_top.env.agent.driver [apb_m_driver] Run phase
+# Waiting for transaction...
+# UVM_INFO ../seq/base_seq.sv(18) @ 0: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending reset transaction
+# Starting reset transaction...
+# Driving reset transaction - PRESETn = 0
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(38) @ 5000: uvm_test_top.env.agent.monitor [apb_m_monitor] Reset transaction detected
+# UVM_INFO ../model/Environment/scoreboard.sv(46) @ 5000: uvm_test_top.env.scb [apb_scoreboard] Reset transaction received - clearing memory model
+# Reset released - PRESETn = 1
+# UVM_INFO ../model/Environment/apb_m_driver.sv(59) @ 25000: uvm_test_top.env.agent.driver [apb_m_driver] Reset transaction driven
+# Waiting for transaction...
+# UVM_INFO ../seq/base_seq.sv(21) @ 25000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Reset transaction sent
+# UVM_INFO ../seq/base_seq.sv(38) @ 25000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x00000004, DATA: 0xdeadbeef, STRB: 0xf
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 65000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x00000004, data=0xdeadbeef, strb=0xf
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 65000: uvm_test_top.env.scb [apb_scoreboard] Write #1: addr=0x00000004, data=0xdeadbeef, strb=0xf
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(70) @ 105000: uvm_test_top.env.agent.monitor [apb_m_monitor] Read transaction captured: addr=0x00000004, data=0x000000ff
+# UVM_INFO ../model/Environment/scoreboard.sv(72) @ 105000: uvm_test_top.env.scb [apb_scoreboard] Read #1: addr=0x00000004, data=0x000000ff
+# UVM_ERROR ../model/Environment/scoreboard.sv(185) @ 105000: uvm_test_top.env.scb [apb_scoreboard] Read data mismatch at addr 0x00000004! Expected: 0xdeadbeef, Got: 0x000000ff
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 105000: uvm_test_top.env.scb [apb_scoreboard]   Byte[0] mismatch: Expected: 0xef, Got: 0xff
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 105000: uvm_test_top.env.scb [apb_scoreboard]   Byte[1] mismatch: Expected: 0xbe, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 105000: uvm_test_top.env.scb [apb_scoreboard]   Byte[2] mismatch: Expected: 0xad, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 105000: uvm_test_top.env.scb [apb_scoreboard]   Byte[3] mismatch: Expected: 0xde, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(220) @ 105000: uvm_test_top.env.scb [apb_scoreboard] Read data parity error! Expected: 0xf, Got: 0x0
+# UVM_INFO ../seq/base_seq.sv(38) @ 105000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x00000008, DATA: 0x5555aaaa, STRB: 0x3
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 145000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x00000008, data=0x5555aaaa, strb=0x3
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 145000: uvm_test_top.env.scb [apb_scoreboard] Write #2: addr=0x00000008, data=0x5555aaaa, strb=0x3
+# UVM_INFO ../seq/base_seq.sv(38) @ 145000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x00000008, DATA: 0xffff0000, STRB: 0xc
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 185000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x00000008, data=0xffff0000, strb=0xc
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 185000: uvm_test_top.env.scb [apb_scoreboard] Write #3: addr=0x00000008, data=0xffff0000, strb=0xc
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(70) @ 225000: uvm_test_top.env.agent.monitor [apb_m_monitor] Read transaction captured: addr=0x00000008, data=0x00000000
+# UVM_INFO ../model/Environment/scoreboard.sv(72) @ 225000: uvm_test_top.env.scb [apb_scoreboard] Read #2: addr=0x00000008, data=0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(185) @ 225000: uvm_test_top.env.scb [apb_scoreboard] Read data mismatch at addr 0x00000008! Expected: 0xffffaaaa, Got: 0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 225000: uvm_test_top.env.scb [apb_scoreboard]   Byte[0] mismatch: Expected: 0xaa, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 225000: uvm_test_top.env.scb [apb_scoreboard]   Byte[1] mismatch: Expected: 0xaa, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 225000: uvm_test_top.env.scb [apb_scoreboard]   Byte[2] mismatch: Expected: 0xff, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 225000: uvm_test_top.env.scb [apb_scoreboard]   Byte[3] mismatch: Expected: 0xff, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(220) @ 225000: uvm_test_top.env.scb [apb_scoreboard] Read data parity error! Expected: 0xf, Got: 0x0
+# UVM_INFO ../seq/base_seq.sv(38) @ 225000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x0000000c, DATA: 0x12345678, STRB: 0x1
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 265000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x0000000c, data=0x12345678, strb=0x1
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 265000: uvm_test_top.env.scb [apb_scoreboard] Write #4: addr=0x0000000c, data=0x12345678, strb=0x1
+# UVM_INFO ../seq/base_seq.sv(38) @ 265000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x0000000c, DATA: 0x12345678, STRB: 0x2
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 305000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x0000000c, data=0x12345678, strb=0x2
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 305000: uvm_test_top.env.scb [apb_scoreboard] Write #5: addr=0x0000000c, data=0x12345678, strb=0x2
+# UVM_INFO ../seq/base_seq.sv(38) @ 305000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x0000000c, DATA: 0x12345678, STRB: 0x4
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 345000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x0000000c, data=0x12345678, strb=0x4
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 345000: uvm_test_top.env.scb [apb_scoreboard] Write #6: addr=0x0000000c, data=0x12345678, strb=0x4
+# UVM_INFO ../seq/base_seq.sv(38) @ 345000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x0000000c, DATA: 0x12345678, STRB: 0x8
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 385000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x0000000c, data=0x12345678, strb=0x8
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 385000: uvm_test_top.env.scb [apb_scoreboard] Write #7: addr=0x0000000c, data=0x12345678, strb=0x8
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(70) @ 425000: uvm_test_top.env.agent.monitor [apb_m_monitor] Read transaction captured: addr=0x0000000c, data=0x00000000
+# UVM_INFO ../model/Environment/scoreboard.sv(72) @ 425000: uvm_test_top.env.scb [apb_scoreboard] Read #3: addr=0x0000000c, data=0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(185) @ 425000: uvm_test_top.env.scb [apb_scoreboard] Read data mismatch at addr 0x0000000c! Expected: 0x12345678, Got: 0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 425000: uvm_test_top.env.scb [apb_scoreboard]   Byte[0] mismatch: Expected: 0x78, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 425000: uvm_test_top.env.scb [apb_scoreboard]   Byte[1] mismatch: Expected: 0x56, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 425000: uvm_test_top.env.scb [apb_scoreboard]   Byte[2] mismatch: Expected: 0x34, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 425000: uvm_test_top.env.scb [apb_scoreboard]   Byte[3] mismatch: Expected: 0x12, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(220) @ 425000: uvm_test_top.env.scb [apb_scoreboard] Read data parity error! Expected: 0xf, Got: 0x0
+# UVM_INFO ../seq/base_seq.sv(38) @ 425000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Sending write transaction - ADDR: 0x00000000, DATA: 0x9abcdef0, STRB: 0x5
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 465000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x00000000, data=0x9abcdef0, strb=0x5
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 465000: uvm_test_top.env.scb [apb_scoreboard] Write #8: addr=0x00000000, data=0x9abcdef0, strb=0x5
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(70) @ 505000: uvm_test_top.env.agent.monitor [apb_m_monitor] Read transaction captured: addr=0x00000000, data=0x00000000
+# UVM_INFO ../model/Environment/scoreboard.sv(72) @ 505000: uvm_test_top.env.scb [apb_scoreboard] Read #4: addr=0x00000000, data=0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(185) @ 505000: uvm_test_top.env.scb [apb_scoreboard] Read data mismatch at addr 0x00000000! Expected: 0x00bc00f0, Got: 0x00000000
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 505000: uvm_test_top.env.scb [apb_scoreboard]   Byte[0] mismatch: Expected: 0xf0, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(190) @ 505000: uvm_test_top.env.scb [apb_scoreboard]   Byte[2] mismatch: Expected: 0xbc, Got: 0x00
+# UVM_ERROR ../model/Environment/scoreboard.sv(220) @ 505000: uvm_test_top.env.scb [apb_scoreboard] Read data parity error! Expected: 0xf, Got: 0x0
+# UVM_INFO ../seq/base_seq.sv(68) @ 505000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Starting parity error injection test with valid addresses
+# UVM_INFO ../seq/base_seq.sv(83) @ 505000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Testing valid address 0x00000008 with parity pattern
+# Waiting for transaction...
+# UVM_INFO ../model/Environment/apb_m_monitor.sv(67) @ 545000: uvm_test_top.env.agent.monitor [apb_m_monitor] Write transaction captured: addr=0x00000008, data=0xdeadbeef, strb=0xf
+# UVM_INFO ../model/Environment/scoreboard.sv(54) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Write #9: addr=0x00000008, data=0xdeadbeef, strb=0xf
+# UVM_INFO ../seq/base_seq.sv(88) @ 545000: uvm_test_top.env.agent.sequencer@@rst_seq [base_seq] Parity error test completed
+# UVM_INFO ../tests/base_test.sv(46) @ 545000: uvm_test_top [base_test] Test completed
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 545000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../model/Environment/scoreboard.sv(233) @ 545000: uvm_test_top.env.scb [apb_scoreboard] === SCOREBOARD SUMMARY ===
+# UVM_INFO ../model/Environment/scoreboard.sv(234) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Total Writes: 9
+# UVM_INFO ../model/Environment/scoreboard.sv(235) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Total Reads: 4
+# UVM_INFO ../model/Environment/scoreboard.sv(236) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Parity Errors: 4
+# UVM_INFO ../model/Environment/scoreboard.sv(237) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Address Errors: 0
+# UVM_INFO ../model/Environment/scoreboard.sv(238) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Data Mismatch Errors: 4
+# UVM_INFO ../model/Environment/scoreboard.sv(239) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Slave Errors (PSLVERR): 0
+# UVM_INFO ../model/Environment/scoreboard.sv(242) @ 545000: uvm_test_top.env.scb [apb_scoreboard] === PSLVERR BEHAVIOR ANALYSIS ===
+# UVM_INFO ../model/Environment/scoreboard.sv(243) @ 545000: uvm_test_top.env.scb [apb_scoreboard] PSLVERR Correctly Asserted (PASS): 0
+# UVM_INFO ../model/Environment/scoreboard.sv(244) @ 545000: uvm_test_top.env.scb [apb_scoreboard] PSLVERR Missing (ERROR): 0
+# UVM_INFO ../model/Environment/scoreboard.sv(245) @ 545000: uvm_test_top.env.scb [apb_scoreboard] PSLVERR Unexpected (ERROR): 0
+# UVM_ERROR ../model/Environment/scoreboard.sv(253) @ 545000: uvm_test_top.env.scb [apb_scoreboard] *** TOTAL ERRORS DETECTED: 8 ***
+# UVM_ERROR ../model/Environment/scoreboard.sv(255) @ 545000: uvm_test_top.env.scb [apb_scoreboard]   - 4 PARITY ERRORS
+# UVM_ERROR ../model/Environment/scoreboard.sv(261) @ 545000: uvm_test_top.env.scb [apb_scoreboard]   - 4 DATA MISMATCH ERRORS
+# UVM_INFO ../model/Environment/scoreboard.sv(275) @ 545000: uvm_test_top.env.scb [apb_scoreboard] === FINAL MEMORY CONTENTS ===
+# UVM_INFO ../model/Environment/scoreboard.sv(277) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Addr[ 3- 0]: 0x00bc00f0
+# UVM_INFO ../model/Environment/scoreboard.sv(277) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Addr[ 7- 4]: 0xdeadbeef
+# UVM_INFO ../model/Environment/scoreboard.sv(277) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Addr[11- 8]: 0xdeadbeef
+# UVM_INFO ../model/Environment/scoreboard.sv(277) @ 545000: uvm_test_top.env.scb [apb_scoreboard] Addr[15-12]: 0x12345678
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   82
+# UVM_WARNING :    0
+# UVM_ERROR :   25
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [apb_m_agent]     3
+# [apb_m_driver]     4
+# [apb_m_env]     3
+# [apb_m_monitor]    17
+# [apb_m_sequencer]     2
+# [apb_scoreboard]    57
+# [base_seq]    13
+# [base_test]     4
+# ** Note: $finish    : /home/shared_folder/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 545 ns  Iteration: 61  Instance: /testbench
+# End time: 17:02:58 on Aug 11,2025, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 10

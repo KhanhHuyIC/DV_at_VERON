@@ -1,0 +1,374 @@
+module apb_master #(
+  parameter ADDR_WIDTH = 32,
+  parameter DATA_WIDTH = 8 ,
+  parameter NUM_SLAVE  = 4
+)(
+  // Input declaration
+  input  logic                                 PCLK                      ,    // APB clock signal
+  input  logic                                 PRESETn                   ,    // Active-low reset signal
+  input  logic [DATA_WIDTH/8-1:0]              read_paddr_parity_src_out ,    // Parity bit from source for apb_read_paddr
+  input  logic [DATA_WIDTH/8-1:0]              write_paddr_parity_src_out,    // Parity bit from source for apb_write_paddr
+  input  logic [DATA_WIDTH/8-1:0]              write_data_parity_src_out ,    // Parity bit from source for apb_write_data
+  input  logic                                 pstrb_parity_src_out      ,    // Parity bit from source for PSTRB
+  input  logic                                 transfer                  ,    // Initiates APB transfer when high
+  input  logic                                 WRITE_READ                ,    // 1: Write, 0: Read operation
+  input  logic [ADDR_WIDTH-1:0]                apb_write_paddr           ,    // Write address from master
+  input  logic [ADDR_WIDTH-1:0]                apb_read_paddr            ,    // Read address from master
+  input  logic [DATA_WIDTH-1:0]                apb_write_data            ,    // Data to be written to slave
+  input  logic [DATA_WIDTH/8-1:0]              PSTRB                     ,    // Byte write strobe (valid per byte)
+  input  logic [NUM_SLAVE-1:0][DATA_WIDTH-1:0] PRDATA                    ,    // Read data from all slaves
+  input  logic [NUM_SLAVE-1:0]                 PREADY                    ,    // Slave ready signal
+  input  logic [NUM_SLAVE-1:0]                 PSLVERR                   ,    // Slave error signal
+  input  logic [DATA_WIDTH/8-1:0]              prdata_parity_slave_out   ,    // Parity bit from slave for PRDATA
+  // Output declaration
+  output logic [DATA_WIDTH/8-1:0]              read_paddr_parity_chk     ,    // Parity check from source to master for apb_read_paddr
+  output logic [DATA_WIDTH/8-1:0]              write_paddr_parity_chk    ,    // Parity check from source to master for apd_write_paddr
+  output logic [DATA_WIDTH/8-1:0]              write_data_parity_chk     ,    // Parity check from source to master for apd_write_data
+  output logic                                 pstrb_parity_chk          ,    // Parity check from source to master for PSTRB
+  output logic                                 PENABLE                   ,    // Enable signal for APB transaction (n cycle)
+  output logic [NUM_SLAVE-1:0]                 PSEL                      ,    // One-hot slave select signal
+  output logic [ADDR_WIDTH-1:0]                PADDR                     ,    // Address sent to slave
+  output logic [DATA_WIDTH-1:0]                PWDATA                    ,    // Data sent to slave for write
+  output logic                                 PWRITE                    ,    // Write enable signal (1: Write, 0: Read)
+  output logic [DATA_WIDTH-1:0]                apb_read_data_out         ,    // Captured read data from slave
+  output logic [DATA_WIDTH/8-1:0]              PADDRCHK                  ,    // Parity bit from master for PADDR
+  output logic [DATA_WIDTH/8-1:0]              PWDATACHK                 ,    // Parity bit from master for PWDATA
+  output logic [DATA_WIDTH/8-1:0]              PRDATACHK                      // Parity check from slave to master for PRDATA
+);
+
+  // Local parameter
+  localparam STRB_WIDTH = DATA_WIDTH / 8   ;
+  localparam DEC_WIDTH  = $clog2(NUM_SLAVE);
+
+  // Internal logics declaration
+  genvar                        i                     ;
+  // Parity internal logics for parity check from source to master
+  logic [DATA_WIDTH/8-1:0]      read_paddr_parity_bit ;
+  logic [DATA_WIDTH/8-1:0]      read_paddr_parity_reg ;
+  logic [DATA_WIDTH/8-1:0]      write_paddr_parity_bit;
+  logic [DATA_WIDTH/8-1:0]      write_paddr_parity_reg;
+  logic [DATA_WIDTH/8-1:0]      write_data_parity_bit ;
+  logic [DATA_WIDTH/8-1:0]      write_data_parity_reg ;
+  logic                         pstrb_parity_bit      ;
+  logic                         pstrb_parity_reg      ;
+
+  // Internal logics for apb master 
+  logic                         read_data_reg_en      ;
+  logic                         PSELx_decoder_en      ;
+  logic [NUM_SLAVE-1:0]         PREADY_selected       ;
+  logic [NUM_SLAVE-1:0]         PSLVERR_selected      ;
+  logic [STRB_WIDTH-1:0]        pstrb_reg             ;
+  logic [STRB_WIDTH-1:0]        pstrb_byte_mask       ;
+  logic [DATA_WIDTH-1:0]        apb_write_data_reg    ;
+  logic [DATA_WIDTH-1:0]        prdata_selected       ;
+  logic [DATA_WIDTH-1:0]        prdata_selected_reg   ;
+  logic [$clog2(NUM_SLAVE)-1:0] slave_addr_range      ;
+  logic [DATA_WIDTH-1:0]        pwdata_reg            ;
+  logic [DATA_WIDTH-1:0]        read_data_reg         ;
+
+  // Parity internal logics for parity check from master to slave
+  logic                         paddr_parity_en_reg   ;
+  logic [DATA_WIDTH/8-1:0]      paddr_parity_chk      ;
+  logic                         pwdata_parity_en_reg  ;
+  logic [DATA_WIDTH/8-1:0]      pwdata_parity_chk     ;
+
+  // Parity internal logics for parity check from slave to master
+  logic [DATA_WIDTH/8-1:0]      prdata_parity_bit     ;
+  logic [DATA_WIDTH/8-1:0]      prdata_parity_reg     ;
+
+  // Internal enum logics declaration
+  logic [1:0]                   fsm_state             ;
+  // typedef enum logic [1:0] {
+  //   IDLE   = 2'b00,
+  //   SETUP  = 2'b01,
+  //   ACCESS = 2'b10
+  // } state_t;
+
+  // state_t fsm_state;
+
+  //============================================================
+  //              SOURCE TO MASTER PARITY CHECK                 
+  //============================================================
+
+  // APB master parity check from source to master for apb_read_paddr
+  // assign read_paddr_parity_bit = ^apb_read_paddr;
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_read_paddr_parity
+      assign read_paddr_parity_bit[i] = ^apb_read_paddr[i*8 +: 8];
+    end
+  endgenerate
+
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_read_paddr_parity_check_register (
+    .clk  (PCLK                 ),
+    .rst_n(PRESETn              ),
+    .en   (WRITE_READ           ), 
+    .d    (read_paddr_parity_bit),
+    .q    (read_paddr_parity_reg)
+  ); 
+  assign read_paddr_parity_chk = read_paddr_parity_reg ^ read_paddr_parity_src_out; 
+
+  // APB master parity check from source to master for apb_write_paddr
+  // assign write_paddr_parity_bit = ^apb_write_paddr;
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_write_paddr_parity
+      assign write_paddr_parity_bit[i] = ^apb_write_paddr[i*8 +: 8];
+    end
+  endgenerate
+
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_write_paddr_parity_check_register (
+    .clk  (PCLK                  ),
+    .rst_n(PRESETn               ),
+    .en   (WRITE_READ            ), 
+    .d    (write_paddr_parity_bit),
+    .q    (write_paddr_parity_reg)
+  );
+  assign write_paddr_parity_chk = write_paddr_parity_reg ^ write_paddr_parity_src_out;
+
+  // APB master parity check from source to master for apb_write_dataX
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_write_data_parity
+      assign write_data_parity_bit[i] = ^apb_write_data[i*8 +: 8];
+    end
+  endgenerate
+
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_write_data_parity_check_register (
+    .clk  (PCLK                 ),
+    .rst_n(PRESETn              ),
+    .en   (WRITE_READ           ), 
+    .d    (write_data_parity_bit),
+    .q    (write_data_parity_reg)
+  );
+  assign  write_data_parity_chk = write_data_parity_reg ^ write_data_parity_src_out;
+
+  // APB master parity check from source to master for PSTRB
+  assign pstrb_parity_bit = ^PSTRB;
+  apb_register #(
+    .WIDTH(1)
+  ) apb_pstrb_parity_check_register (
+    .clk  (PCLK            ),
+    .rst_n(PRESETn         ),
+    .en   (WRITE_READ      ), 
+    .d    (pstrb_parity_bit),
+    .q    (pstrb_parity_reg)
+  );
+  assign  pstrb_parity_chk = pstrb_parity_reg ^ pstrb_parity_src_out;
+
+  //============================================================
+  //       APB MASTER COMBINATIONAL AND SEQUENTIAL LOGICS       
+  //============================================================
+  
+  // FSM
+  apb_master_fsm FSM(
+    .PCLK    (PCLK     ),  // APB clock
+    .PRESETn (PRESETn  ),  // APB active-low reset
+    .transfer(transfer ),  // Transfer request from master
+    .PREADY  (PREADY_selected   ),  // Ready signal from slave
+    .state   (fsm_state)   // Current FSM state
+  );
+  // PREADY select to FSM
+    param_mux #(
+    .DATA_WIDTH('1        ),
+    .NUM_SLAVE (NUM_SLAVE )
+  ) PREADY_mux (
+    .in_data   (PREADY          ),
+    .sel       (slave_addr_range), // Flexible select for param mux base on slave number
+    .out_data  (PREADY_selected )
+  );
+  // PENABLE output logic
+  assign PENABLE = fsm_state[1];
+
+  // PSELx decoder for slave selection
+  assign PSELx_decoder_en = fsm_state[0] | fsm_state[1]                     ;
+  assign slave_addr_range = PADDR[ADDR_WIDTH-1:ADDR_WIDTH-$clog2(NUM_SLAVE)];
+  decoder #(
+    .N(DEC_WIDTH)
+  ) slave_select_decoder (
+    .in (slave_addr_range),
+    .en (PSELx_decoder_en),
+    .out(PSEL            )
+  );
+
+  // PADDR mux between read and write address
+  mux_2_to_1 #(
+    .WIDTH(ADDR_WIDTH)
+  ) PADDR_mux (
+    .in0(apb_read_paddr ),
+    .in1(apb_write_paddr),
+    .sel(WRITE_READ     ),
+    .out(PADDR          )
+  );
+
+  // PSTRB mux - high when write - low when read
+  apb_register #(
+    .WIDTH(STRB_WIDTH)
+  ) PSTRB_register (
+    .clk  (PCLK     ),
+    .rst_n(PRESETn  ),
+    .en   (1'b1     ),
+    .d    (PSTRB    ),
+    .q    (pstrb_reg)
+  );
+
+  assign pstrb_byte_mask = {pstrb_reg[3] & WRITE_READ,
+                            pstrb_reg[2] & WRITE_READ,
+                            pstrb_reg[1] & WRITE_READ,
+                            pstrb_reg[0] & WRITE_READ};
+
+  // Byte masking for PWDATA with PSTRB
+  apb_register #(
+    .WIDTH(DATA_WIDTH)
+  ) apb_write_register (
+    .clk  (PCLK              ),
+    .rst_n(PRESETn           ),
+    .en   (1'b1              ),
+    .d    (apb_write_data    ),
+    .q    (apb_write_data_reg)
+  );
+
+  apb_register #(
+    .WIDTH(DATA_WIDTH)
+  ) apb_read_register (
+    .clk  (PCLK               ),
+    .rst_n(PRESETn            ),
+    .en   (1'b1               ),
+    .d    (prdata_selected    ),
+    .q    (prdata_selected_reg)
+  );
+
+  apb_master_byte_masking #(
+    .DATA_WIDTH(DATA_WIDTH),              
+    .STRB_WIDTH(STRB_WIDTH)
+  ) byte_masking_block(
+    .pstrb_byte_mask(pstrb_byte_mask    ),
+    .apb_write_data (apb_write_data_reg ),
+    .PRDATA         (prdata_selected_reg),
+    .PWDATA         (pwdata_reg         )
+  );
+
+  // Register to reduce long timing path of PWDATA
+  apb_register #(
+    .WIDTH(DATA_WIDTH)
+  ) pwdata_register (
+    .clk  (PCLK      ),
+    .rst_n(PRESETn   ),
+    .en   (1'b1      ),
+    .d    (pwdata_reg),
+    .q    (PWDATA    )
+  );
+
+  // PWRITE output logic
+  // assign PWRITE = WRITE_READ;
+  apb_register #(
+    .WIDTH(1)
+  ) pwrite_register (
+    .clk  (PCLK      ),
+    .rst_n(PRESETn   ),
+    .en   (1'b1      ),
+    .d    (WRITE_READ),
+    .q    (PWRITE    )
+  );
+
+  // Mux to select read data from the chosen slave
+  param_mux #(
+    .DATA_WIDTH(DATA_WIDTH),
+    .NUM_SLAVE (NUM_SLAVE )
+  ) PRDATA_mux (
+    .in_data   (PRDATA          ),
+    .sel       (slave_addr_range), // Flexible select for param mux base on slave number
+    .out_data  (prdata_selected )
+  );
+
+  // Apb read data from master to source
+  assign read_data_reg_en = 1'b1;
+  apb_register #(
+    .WIDTH(DATA_WIDTH)
+  ) apb_read_data_out_register (
+    .clk  (PCLK             ),
+    .rst_n(PRESETn          ),
+    .en   (read_data_reg_en ),
+    .d    (prdata_selected  ),
+    .q    (read_data_reg    )
+  );
+  
+    param_mux #(
+    .DATA_WIDTH('1              ),
+    .NUM_SLAVE (NUM_SLAVE       )
+  ) PSLVERR_mux (
+    .in_data   (PSLVERR         ),
+    .sel       (slave_addr_range), // Flexible select for param mux base on slave number
+    .out_data  (PSLVERR_selected)
+  );
+  assign apb_read_data_out = read_data_reg & {32{!WRITE_READ}} & {32{!PSLVERR_selected}};
+
+  //============================================================
+  //              MASTER TO SLAVE PARITY CHECK                 
+  //============================================================
+
+  // APB master parity check from master to slave for PADDR
+  // assign paddr_parity_chk    = ^PADDR                     ;
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_paddr_parity
+      assign paddr_parity_chk[i] = ^PADDR[i*8 +: 8];
+    end
+  endgenerate
+
+  assign paddr_parity_en_reg = fsm_state[0] | fsm_state[1];
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_paddr_parity_check_register (
+    .clk  (PCLK                   ),
+    .rst_n(PRESETn                ),
+    .en   (paddr_parity_en_reg    ), // At Setup or Access state PSELx = 1'b1
+    .d    (paddr_parity_chk       ),
+    .q    (paddr_parity_master_out)
+  );
+
+  // APB master parity check from master to slave for PWDATA
+  // assign pwdata_parity_chk    = ^PWDATA                               ;
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_pwdata_parity
+      assign pwdata_parity_chk[i] = ^PWDATA[i*8 +: 8];
+    end
+  endgenerate
+
+  assign pwdata_parity_en_reg = (fsm_state[0] | fsm_state[1]) & PWRITE;
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_pwdata_parity_check_register (
+    .clk  (PCLK                    ),
+    .rst_n(PRESETn                 ),
+    .en   (pwdata_parity_en_reg    ), // Enable condition = (PSELx == 1'b1) or PWRITE
+    .d    (pwdata_parity_chk       ),
+    .q    (pwdata_parity_master_out)
+  );
+
+  //============================================================
+  //              SLAVE TO MASTER PARITY CHECK                 
+  //============================================================
+
+  // APB master parity check from slave to master for PRDATA
+  // assign prdata_parity_bit    = ^prdata_selected;
+  generate
+    for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin : gen_prdata_parity
+      assign prdata_parity_bit[i] = ^apb_read_data_out[i*8 +: 8];
+    end
+  endgenerate
+
+  apb_register #(
+    .WIDTH(DATA_WIDTH/8)
+  ) apb_prdata_parity_check_register (
+    .clk  (PCLK             ),
+    .rst_n(PRESETn          ),
+    .en   (PREADY           ), // Enable condition = (PREADY == 1'b1)
+    .d    (prdata_parity_bit),
+    .q    (prdata_parity_reg)
+  );
+  assign PRDATACHK = prdata_parity_reg ^ prdata_parity_slave_out;
+
+endmodule : apb_master

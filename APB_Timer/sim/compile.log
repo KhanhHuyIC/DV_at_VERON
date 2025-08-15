@@ -1,0 +1,55 @@
+QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+Start time: 16:51:10 on Aug 11,2025
+vlog -sv "+cover=bcesft" "+acc" -f filelists.f 
+-- Compiling package apb_m_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) ../env/apb_m_pkg.sv(5): Using implicit +incdir+/home/shared_folder/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package apb_m_pkg
+** Warning: ** while parsing file included at ../env/testbench.sv(3)
+** at ../env/apb_m_pkg.sv(2): (vlog-2275) Existing package 'apb_m_pkg' at line 2 will be overwritten.
+-- Compiling interface apb_if
+-- Compiling module testbench
+-- Importing package apb_m_pkg
+-- Compiling module param_register
+** Warning: ../RTL_Code/param_register.sv(8): (vlog-13314) Defaulting port 'd' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+-- Compiling module decoder
+-- Compiling module wait_state_shift_reg
+-- Compiling module apb_master
+** Warning: ../RTL_Code/apb_master.sv(17): (vlog-13314) Defaulting port 'PRDATA' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+** Warning: ../RTL_Code/apb_master.sv(20): (vlog-13314) Defaulting port 'PRDATACHK' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+-- Compiling module apb_slave_ram
+-- Compiling module apb_slave
+-- Compiling module apb_master_fsm
+-- Compiling module apb_master_byte_masking
+-- Compiling module mux_2_to_1
+-- Compiling module param_mux
+** Warning: ../RTL_Code/param_mux.sv(6): (vlog-13314) Defaulting port 'in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+-- Compiling module apb_register
+-- Compiling module apb_protocol
+-- Compiling module apb_slave_timer
+-- Compiling module clk_sel_channel
+-- Compiling module clock_select
+-- Compiling module comparator
+-- Compiling module COMP
+-- Compiling module control_logic
+-- Compiling module high_level_detector
+-- Compiling module low_level_detector
+-- Compiling module negedge_detector
+-- Compiling module param_d_ff
+-- Compiling module pos_det_mode16
+-- Compiling module posedge_detector
+-- Compiling module priority_encoder
+-- Compiling module TCCR
+-- Compiling module TCNT
+-- Compiling module TCOR
+-- Compiling module TCR
+-- Compiling module TCSR
+-- Compiling module Timer_register
+-- Compiling module timer_top
+
+Top level modules:
+	testbench
+	param_register
+	apb_protocol
+End time: 16:51:10 on Aug 11,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 5

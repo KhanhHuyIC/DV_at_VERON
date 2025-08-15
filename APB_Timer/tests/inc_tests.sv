@@ -1,0 +1,7 @@
+`include "base_test.sv"
+`include "onehot_test.sv"
+`include "pslverr_test.sv"
+`include "paritychk_test.sv"
+`include "wr_rst_rd_test.sv"
+// `include "reg_enable_test.sv"
+`include "register_hold_test.sv"

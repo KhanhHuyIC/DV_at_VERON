@@ -83,13 +83,14 @@ package	adder_pkg;
 		function new(string name, uvm_component parent);
 			super.new(name, parent);
 		endfunction
-
+	//Build phase
 	virtual function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
 		if(!uvm_config_db#(virtual adder_if.drv_mp)::get(this, "", "vif", vif))
 			`uvm_fatal("NOVIF", "adder_driver haven't receive the virtual interface")
 		endfunction
 
+	//Run phase
 	virtual task run_phase(uvm_phase phase);
 		super.run_phase(phase);
 		adder_item tr;

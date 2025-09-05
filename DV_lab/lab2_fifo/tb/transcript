@@ -1,0 +1,138 @@
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim FIFO_tb 
+# Start time: 09:23:16 on Jul 25,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.fifo_pkg(fast)
+# Loading work._10_FIFO_tb_sv_unit(fast)
+# Loading work.FIFO_tb(fast)
+# Loading work.fifo_if(fast)
+vsim -voptargs=+acc work.FIFO_tb
+# End time: 09:24:16 on Jul 25,2025, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.FIFO_tb 
+# Start time: 09:24:16 on Jul 25,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.fifo_pkg(fast)
+# Loading work._10_FIFO_tb_sv_unit(fast)
+# Loading work.FIFO_tb(fast)
+# Loading work.fifo_if(fast__2)
+# Loading work.FIFO(fast)
+# Loading work.fifo_if(fast)
+add wave -position insertpoint  \
+sim:/FIFO_tb/dut/wr \
+sim:/FIFO_tb/dut/rd \
+sim:/FIFO_tb/dut/data_in \
+sim:/FIFO_tb/dut/data_out \
+sim:/FIFO_tb/dut/empty \
+sim:/FIFO_tb/dut/full
+run -all
+# Write: 1, Read: 0, Data: d5
+#                    0wr=0, rd=0, data_in=00, valid=00000000, full=0, empty =01
+#                    5wr=1, rd=0, data_in=d5, valid=00000000, full=0, empty =01
+#                   15wr=0, rd=0, data_in=d5, valid=00000000, full=0, empty =00
+# Write: 1, Read: 0, Data: ba
+#                   25wr=1, rd=0, data_in=ba, valid=00000000, full=0, empty =00
+#                   35wr=0, rd=0, data_in=ba, valid=00000000, full=0, empty =00
+# Write: 1, Read: 0, Data: d7
+#                   45wr=1, rd=0, data_in=d7, valid=00000000, full=0, empty =00
+#                   55wr=0, rd=0, data_in=d7, valid=00000000, full=0, empty =00
+#                   65wr=0, rd=0, data_in=00, valid=00000000, full=0, empty =00
+# Write: 0, Read: 1, Data: 00
+#                  125wr=0, rd=1, data_in=00, valid=00000000, full=0, empty =00
+#                  135wr=0, rd=0, data_in=00, valid=11010101, full=1, empty =00
+# Write: 0, Read: 1, Data: 00
+# [SB] POP expect = 0xd5
+#                  145wr=0, rd=1, data_in=00, valid=11010101, full=0, empty =00
+#                  155wr=0, rd=0, data_in=00, valid=10111010, full=1, empty =00
+# Write: 0, Read: 1, Data: 00
+# [SB] POP expect = 0xba
+#                  165wr=0, rd=1, data_in=00, valid=10111010, full=0, empty =00
+#                  175wr=0, rd=0, data_in=00, valid=11010111, full=1, empty =01
+# Write: 1, Read: 0, Data: 5b
+# [SB] POP expect = 0xd7
+# [SB] ERROR: Read when FIFO empty
+#                  185wr=1, rd=0, data_in=5b, valid=11010111, full=0, empty =01
+#                  195wr=0, rd=0, data_in=5b, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: eb
+#                  205wr=1, rd=0, data_in=eb, valid=11010111, full=0, empty =00
+#                  215wr=0, rd=0, data_in=eb, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 53
+#                  225wr=1, rd=0, data_in=53, valid=11010111, full=0, empty =00
+#                  235wr=0, rd=0, data_in=53, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: fe
+#                  245wr=1, rd=0, data_in=fe, valid=11010111, full=0, empty =00
+#                  255wr=0, rd=0, data_in=fe, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 53
+#                  265wr=1, rd=0, data_in=53, valid=11010111, full=0, empty =00
+#                  275wr=0, rd=0, data_in=53, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 8a
+#                  285wr=1, rd=0, data_in=8a, valid=11010111, full=0, empty =00
+#                  295wr=0, rd=0, data_in=8a, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: d6
+#                  305wr=1, rd=0, data_in=d6, valid=11010111, full=0, empty =00
+#                  315wr=0, rd=0, data_in=d6, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: cf
+#                  325wr=1, rd=0, data_in=cf, valid=11010111, full=0, empty =00
+#                  335wr=0, rd=0, data_in=cf, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: a6
+#                  345wr=1, rd=0, data_in=a6, valid=11010111, full=0, empty =00
+#                  355wr=0, rd=0, data_in=a6, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: f5
+#                  365wr=1, rd=0, data_in=f5, valid=11010111, full=0, empty =00
+#                  375wr=0, rd=0, data_in=f5, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 79
+#                  385wr=1, rd=0, data_in=79, valid=11010111, full=0, empty =00
+#                  395wr=0, rd=0, data_in=79, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: db
+#                  405wr=1, rd=0, data_in=db, valid=11010111, full=0, empty =00
+#                  415wr=0, rd=0, data_in=db, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 40
+#                  425wr=1, rd=0, data_in=40, valid=11010111, full=0, empty =00
+#                  435wr=0, rd=0, data_in=40, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 78
+#                  445wr=1, rd=0, data_in=78, valid=11010111, full=0, empty =00
+#                  455wr=0, rd=0, data_in=78, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 43
+#                  465wr=1, rd=0, data_in=43, valid=11010111, full=0, empty =00
+#                  475wr=0, rd=0, data_in=43, valid=11010111, full=0, empty =00
+# Write: 1, Read: 0, Data: 01
+#                  485wr=1, rd=0, data_in=01, valid=11010111, full=0, empty =00
+#                  495wr=0, rd=0, data_in=01, valid=11010111, full=0, empty =10
+# [GEN] FIFO FULL detected, stop writing
+# Write: 0, Read: 1, Data: 00
+#                  505wr=0, rd=1, data_in=00, valid=11010111, full=0, empty =10
+#                  515wr=0, rd=0, data_in=00, valid=01011011, full=1, empty =00
+# Write: 0, Read: 1, Data: 00
+# [TB] Trigger clear
+# [SB] POP expect = 0x5b
+#                  525wr=0, rd=1, data_in=00, valid=00000000, full=0, empty =01
+#                  535wr=0, rd=0, data_in=00, valid=00000000, full=0, empty =01
+# Write: 0, Read: 1, Data: 00
+#                  545wr=0, rd=1, data_in=00, valid=00000000, full=0, empty =01
+#                  555wr=0, rd=0, data_in=00, valid=00000000, full=0, empty =01
+# Write: 0, Read: 1, Data: 00
+#                  565wr=0, rd=1, data_in=00, valid=00000000, full=0, empty =01
+#                  575wr=0, rd=0, data_in=00, valid=00000000, full=0, empty =01
+# [GEN] FIFO EMPTY detected, stop reading
+# ** Note: $finish    : 10_FIFO_tb.sv(62)
+#    Time: 2640 ns  Iteration: 0  Instance: /FIFO_tb
+# 1
+# Break in Module FIFO_tb at 10_FIFO_tb.sv line 62
+quit
+# End time: 09:28:37 on Jul 25,2025, Elapsed time: 0:04:21
+# Errors: 0, Warnings: 0

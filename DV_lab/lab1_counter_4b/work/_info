@@ -1,0 +1,81 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/veron10/DV_at_VERON/DV_lab/lab1_counter_4b
+T_opt
+!s110 1757039146
+VYV<jfo__BDRVFbTTlJ1f_2
+04 10 4 work counter_tb fast 0
+=1-001cc447b718-68ba4a2a-c09f7-a96f
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2_1;73
+vcounter
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1757039141
+!i10b 1
+!s100 LCBLlb0Ti@l3k97F[VLe]3
+I]=4<e^m;?4HhO5nP7Ve`>2
+S1
+R1
+w1757039137
+8./RTL/counter.sv
+F./RTL/counter.sv
+!i122 13
+L0 1 18
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z7 !s108 1757039141.000000
+Z8 !s107 ./TB/counter_tb.sv|./RTL/counter.sv|
+Z9 !s90 -f|compile.f|
+!i113 0
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vcounter_tb
+R3
+R4
+!i10b 1
+!s100 ^YT@[oUZQFZ@=G=G^Rk;V2
+Inhoc571:cKGna<Jelk[]Z1
+S1
+R1
+w1757039068
+8./TB/counter_tb.sv
+F./TB/counter_tb.sv
+!i122 13
+L0 1 69
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2

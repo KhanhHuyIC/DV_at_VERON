@@ -1,0 +1,43 @@
+# vsim -c work.fa_16b_tb 
+# Start time: 14:41:58 on Sep 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.fa_16b_tb(fast)
+# [PASS] a=3524, b=5e81, cin=1 => sum=93a6, cout=0
+# [PASS] a=5663, b=7b0d, cin=1 => sum=d171, cout=0
+# [PASS] a=8465, b=5212, cin=1 => sum=d678, cout=0
+# [PASS] a=cd0d, b=f176, cin=1 => sum=be84, cout=1
+# [PASS] a=57ed, b=f78c, cin=1 => sum=4f7a, cout=1
+# [PASS] a=24c6, b=84c5, cin=0 => sum=a98b, cout=0
+# [PASS] a=f7e5, b=7277, cin=0 => sum=6a5c, cout=1
+# [PASS] a=db8f, b=69f2, cin=0 => sum=4581, cout=1
+# [PASS] a=7ae8, b=4ec5, cin=0 => sum=c9ad, cout=0
+# [PASS] a=28bd, b=582d, cin=1 => sum=80eb, cout=0
+# [PASS] a=6263, b=870a, cin=0 => sum=e96d, cout=0
+# [PASS] a=2120, b=45aa, cin=1 => sum=66cb, cout=0
+# [PASS] a=3e96, b=b813, cin=1 => sum=f6aa, cout=0
+# [PASS] a=d653, b=dd6b, cin=1 => sum=b3bf, cout=1
+# [PASS] a=4a02, b=3eae, cin=1 => sum=88b1, cout=0
+# [PASS] a=72cf, b=4923, cin=0 => sum=bbf2, cout=0
+# [PASS] a=0aca, b=4c3c, cin=0 => sum=5706, cout=0
+# [PASS] a=618a, b=b341, cin=0 => sum=14cb, cout=1
+# [PASS] a=f378, b=1289, cin=1 => sum=0602, cout=1
+# [PASS] a=65b6, b=f9c6, cin=0 => sum=5f7c, cout=1
+# ** Note: $finish    : TB/fa_16b_tb.sv(51)
+#    Time: 200 ns  Iteration: 0  Instance: /fa_16b_tb
+# End time: 14:42:03 on Sep 04,2025, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0

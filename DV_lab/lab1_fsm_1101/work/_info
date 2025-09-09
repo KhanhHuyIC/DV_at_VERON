@@ -1,0 +1,141 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/veron10/DV_at_VERON/DV_lab/lab1_FSM_1101
+T_opt
+!s110 1757306007
+VQ8Uh[M=OQGHkBJll018==3
+Z2 04 8 4 work fsm_test fast 0
+=1-001cc447b718-68be5c97-37e6-b760
+Z3 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2_1;73
+T_opt1
+!s110 1757047803
+VcPI@HS:V5eQZf[6CLQPKD3
+R2
+=1-001cc447b718-68ba6bfa-e34ab-312b
+R3
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+R1
+vfsm_1101
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1757040432
+!i10b 1
+!s100 nSaFoJlZGICHEeAAaVm^A0
+IRjR9NUFi?KVCkk0G_f:ed3
+S1
+R1
+w1757040423
+Z7 8RTL/fsm_moore.sv
+Z8 FRTL/fsm_moore.sv
+!i122 0
+L0 1 38
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+!s108 1757040432.000000
+!s107 RTL/fsm_moore.sv|
+!s90 RTL/fsm_moore.sv|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vfsm_mealy
+R6
+Z12 !s110 1757305993
+!i10b 1
+!s100 ^_2D=`Z9n1<fG`_GG<K8C1
+IH`Y5S16V=oj=AKaMd61D81
+S1
+Z13 d/home/veron10/DV_at_VERON/DV_lab/lab1_fsm_1101
+w1757305826
+8RTL/fsm_mealy.sv
+FRTL/fsm_mealy.sv
+!i122 18
+Z14 L0 1 44
+R9
+R10
+r1
+!s85 0
+31
+Z15 !s108 1757305993.000000
+Z16 !s107 TB/fsm_tb.sv|RTL/fsm_mealy.sv|RTL/fsm_moore.sv|
+Z17 !s90 -f|compile.f|
+!i113 0
+R11
+R4
+vfsm_moore
+R6
+R12
+!i10b 1
+!s100 cH3dGR8@He^?Ijc3SiO7J3
+I>2n935QjJAN`ezVJb4foU3
+S1
+R13
+w1757047063
+R7
+R8
+!i122 18
+R14
+R9
+R10
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R11
+R4
+vfsm_test
+R6
+R12
+!i10b 1
+!s100 3f>3EO_Rl_O5TAl6SOG0_3
+I_TPX?KSEz5jKj_g5=]blZ1
+S1
+R13
+w1757305918
+8TB/fsm_tb.sv
+FTB/fsm_tb.sv
+!i122 18
+L0 1 51
+R9
+R10
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R11
+R4

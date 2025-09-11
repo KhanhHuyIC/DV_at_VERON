@@ -2,6 +2,7 @@
 `timescale 1ns/1ps
 
 import apb_pkg::*;
+`include "OOP_TB/07_apb_env.sv"
 
 module APB_top;
 
@@ -10,9 +11,9 @@ module APB_top;
 
 	//DUT instance
 	apb_slave #(
-		.ADDR_WIDTH(ADDR_WIDTH);
-		.DATA_WIDTH(DATA_WIDTH);
-		.REG_NUM(REG_NUM);
+		.ADDR_WIDTH(ADDR_WIDTH),
+		.DATA_WIDTH(DATA_WIDTH),
+		.REG_NUM(REG_NUM)
 		) dut (
 			.PCLK		(apb_vif.PCLK),
 			.PRESETn	(apb_vif.PRESETn),
@@ -50,8 +51,19 @@ module APB_top;
 		env = new(apb_vif, 50); //50 transaction
 
 		//Run the environment
-		env.run("corner"); //"random" / "directed" / "corner"
+		//Run the directed cases
+		$display ("Run directed cases");
+		env.run ("directed");
+		#20;
 
+		//Run the random cases
+		$display ("Run random cases");
+		env.run("random");
+		#20;
+
+		//Run corner cases
+		$display ("Run the corner cases");		
+		env.run("corner"); //"random" / "directed" / "corner"
 		//Wait the simulation run in a enough long time
 		#2000;
 

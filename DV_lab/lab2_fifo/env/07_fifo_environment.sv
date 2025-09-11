@@ -1,9 +1,9 @@
 
 import fifo_pkg::*;
-`include "04_fifo_generator.sv"
-`include "05_fifo_driver.sv"
-`include "06_fifo_monitor.sv"
-`include "07_fifo_scoreboard.sv"
+`include "02_fifo_generator.sv"
+`include "03_fifo_driver.sv"
+`include "04_fifo_monitor.sv"
+`include "05_fifo_scoreboard.sv"
 
 class fifo_env #(parameter DATA_WIDTH = fifo_pkg::DATA_WIDTH);
 	//Declare the elements ued in this class

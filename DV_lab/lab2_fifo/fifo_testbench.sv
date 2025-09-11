@@ -1,9 +1,9 @@
 
 `timescale 1ns/1ps
 import fifo_pkg::*;
-`include "02_fifo_interface.sv"
-`include "09_fifo_environment.sv"
-`include "01_FIFO.sv"
+`include "env/01_fifo_interface.sv"
+`include "env/07_fifo_environment.sv"
+`include "rtl/FIFO.sv"
 
 module FIFO_tb;
 

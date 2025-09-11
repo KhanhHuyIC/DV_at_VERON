@@ -16,28 +16,34 @@ class apb_score;
 	endfunction
 
 	//Scoreboard main task
-	task run();
+	task automatic run();
 		apb_trans tr;
 		int error_cnt = 0;
 		int pass_cnt = 0;
+
+		bit addr_valid;
+		int unsigned idx;
+
 		forever begin
 			mon2score.get(tr);
 
+			idx	= tr.addr >> 2;
+
 			//Check the valid address
-			bit addr_valid = (tr.addr % 4 == 0) && (tr.addr >> 2 < REG_NUM);
+			addr_valid = (tr.addr[1:0] == 2'b00) && (idx < REG_NUM);
 
 			//Check the transaction
 			if (tr.op == APB_WRITE) begin
 			if (addr_valid && !tr.err) begin
-				regfile[tr.addr >> 2] = tr.data;
-				$display("[SCORE][WRITE] Addr: 0x%0h Data: 0x%0h => EXPECT: OK", tr.addr, tr.err);
+				regfile[idx] = tr.wdata;
+				$display("[SCORE][WRITE] Addr: 0x%0h Data: 0x%0h => EXPECT: OK", tr.addr, tr.wdata);
 				pass_cnt++;
 
 			end else if (!addr_valid && tr.err) begin
 				$display("[SCORE][WRITE] Addr:0x%0h OUTOF RANGE => PSLVERR =1 : OK", tr.addr);
 				pass_cnt++;
 			end else begin
-				$display("[SCORE][WRITE][FAIL] Addr: 0x%0h ERR?%0b", tr.addr, tr.err;
+				$display("[SCORE][WRITE][FAIL] Addr: 0x%0h ERR?%0b", tr.addr, tr.err);
 				error_cnt++;
 			end
 

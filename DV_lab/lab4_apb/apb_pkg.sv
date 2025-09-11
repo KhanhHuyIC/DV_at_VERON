@@ -1,5 +1,5 @@
 //00_apb_pkg.sv
-package apb_pgk;
+package apb_pkg;
 
 	//PARAMETERs
 	parameter int	ADDR_WIDTH	= 16;

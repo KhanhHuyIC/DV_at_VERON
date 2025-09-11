@@ -1,4 +1,7 @@
 import apb_pkg::*;
+`include "02_apb_gen.sv"
+`include "03_apb_drv.sv"
+`include "04_apb_mon.sv"
 
 class apb_master_agent;
 	virtual apb_if.MASTER vif;

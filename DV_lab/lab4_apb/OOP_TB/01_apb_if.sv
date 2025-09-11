@@ -1,7 +1,7 @@
 import apb_pkg::*;
 
 interface apb_if;
-	logic	[ADD_WIDTH-1:0] PADDR;
+	logic	[ADDR_WIDTH-1:0] PADDR;
 	logic			PSEL;
 	logic			PENABLE;
 	logic			PWRITE;
@@ -13,7 +13,7 @@ interface apb_if;
 	logic			PRESETn;
 
 	//Clocking block
-	clocking cb @(posedge PCLK)
+	clocking cb @(posedge PCLK);
 		default input #1step output #1step;
 		input PRDATA, PREADY, PSLVERR;
 		output PADDR, PSEL, PENABLE, PWRITE, PWDATA;
@@ -31,4 +31,4 @@ interface apb_if;
 		output PRDATA, PREADY, PSLVERR
 		);
 
-	endinterface
+endinterface

@@ -1,6 +1,8 @@
 // 07_apb_env.sv
 
 import apb_pkg::*;
+`include "05_apb_master_agent.sv"
+`include "06_apb_score.sv"
 
 class apb_env;
 	//Virtual interface

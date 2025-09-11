@@ -16,7 +16,7 @@ class apb_gen;
 
 	//Generate random transaction
 	task run_random();
-		foreach (int i = 0; i < num_transactions; i) begin
+		for (int i = 0; i < num_transactions; i++) begin
 			apb_trans tr = new();
 			assert(tr.randomize());
 			gen2drv.put(tr);

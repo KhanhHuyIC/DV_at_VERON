@@ -1,5 +1,5 @@
 # vsim -c work.APB_top 
-# Start time: 14:47:41 on Sep 15,2025
+# Start time: 16:06:36 on Sep 19,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim-64
 # //  Version 2021.2_1 linux_x86_64 May 15 2021
@@ -65,5 +65,5 @@
 # === [APB TB] Simulation finished! ===
 # ** Note: $finish    : apb_top.sv(75)
 #    Time: 2065 ns  Iteration: 0  Instance: /APB_top
-# End time: 14:47:45 on Sep 15,2025, Elapsed time: 0:00:04
+# End time: 16:06:42 on Sep 19,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0

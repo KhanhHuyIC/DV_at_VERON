@@ -1,9 +1,10 @@
 import	apb_pkg::*;
+include	"apb_cov.sv";
 
 class	apb_monitor;
 	virtual	apb_if.mon	vif;
 	apb_cov cov;
-	mailbox	#(apb_txn) mon2cb;
+	mailbox	#(apb_txn) mon2sb;
 
 	function new(virtual apb_if.mon v, mailbox #(apb_txn) q);
 		vif	=	v;

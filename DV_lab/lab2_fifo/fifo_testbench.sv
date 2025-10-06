@@ -3,9 +3,9 @@
 import fifo_pkg::*;
 `include "env/01_fifo_interface.sv"
 `include "env/07_fifo_environment.sv"
-`include "rtl/FIFO.sv"
+`include "rtl/fifo.sv"
 
-module FIFO_tb;
+module fifo_tb;
 
 //Interface
 fifo_if intf();
@@ -28,7 +28,7 @@ initial begin
 end
 
 //DUT
-FIFO dut (
+fifo dut (
 	.clk (intf.clk),
 	.rst_n (intf.rst_n),
 	.wr (intf.wr),

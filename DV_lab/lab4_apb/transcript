@@ -1,0 +1,14 @@
+# vsim -c work.top_tb 
+# Start time: 13:42:05 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): tb/env/apb_monitor.sv(28): (vopt-7063) Failed to find 'mob2sb' in hierarchical name '$root.mob2sb.put'.
+#         Region: top_tb_sv_unit
+# ** Error (suppressible): tb/sva/apb_protocol_sva.sv(5): (vopt-7063) Failed to find 'PREADAY' in hierarchical name 'vif.PREADAY'.
+#         Region: top_tb.sva
+# ** Error (suppressible): rtl/apb_slave_generic.sv(25): (vopt-7063) Failed to find 'WAIT_STAES' in hierarchical name 'WAIT_STAES'.
+#         Region: top_tb.dut
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=0.
+# Error loading design
+# End time: 13:42:05 on Sep 19,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0

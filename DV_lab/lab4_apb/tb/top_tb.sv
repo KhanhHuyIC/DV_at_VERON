@@ -1,8 +1,12 @@
 `timescale 1ns/1ps
+include	"apb_env.sv";
 	module top_tb;
-		localparam	ADDR_W = 12;
-		localparam	DATA_W = 32;
-		localparam	DEPTH = 1024;
+		localparam	ADDR_W	= 12;
+		localparam	DATA_W	= 32;
+		localparam	DEPTH	= 1024;
+		
+		logic		PCLK	= 0;
+		logic		PRESETn	= 0;
 
 		//Clock & reset
 		initial begin

@@ -1,4 +1,6 @@
 import	apb_pkg::*;
+include	"apb_agent.sv";
+include "apb_scoreboard.sv";
 
 class	apb_env;
 	apb_agent	agent;

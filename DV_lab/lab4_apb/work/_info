@@ -9,86 +9,371 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/veron10/DV_at_VERON/DV_lab/lab4_apb
-Xapb_cov_sv_unit
-!s115 apb_if
+Xapb__pkg
 Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z2 !s110 1758177899
-VJAMO2d;6Laz<j:C<Lb[Ga3
+!s110 1758252914
+!i10b 1
+!s100 n0V9^Q9=XV=lCm:OmRo?01
+IL3:JFUEnM1oYmdg2@O`1A3
+S1
+R0
+w1758252857
+Z2 8tb/pkg/apb_pkg.sv
+Z3 Ftb/pkg/apb_pkg.sv
+!i122 6
+Z4 L0 1 0
+VL3:JFUEnM1oYmdg2@O`1A3
+Z5 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+!s108 1758252914.000000
+Z6 !s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/env/apb_txn.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|tb/pkg/apb_pkg.sv|
+Z7 !s90 -sv|-f|sim/run.f|
+!i113 0
+Z8 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -sv +incdir+tb/pkg +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+Xapb_agent_sv_unit
+Z11 !s115 apb_if
+R1
+R1
+Z12 DXx4 work 7 apb_pkg 0 22 J5iD7MGiGZf^DfR;T[5aV0
+Z13 !s110 1759718974
+VLX`>[ILebCX?Q4B7ERcHK1
 r1
 !s85 0
 !i10b 1
-!s100 S27HzB;ad5cEaeN9NO9UQ2
-IJAMO2d;6Laz<j:C<Lb[Ga3
+!s100 5ZcQ<3F_]LOJ`[=OM4@iL0
+ILX`>[ILebCX?Q4B7ERcHK1
 !i103 1
 S1
 R0
-w1758171706
-8tb/env/apb_cov.sv
-Ftb/env/apb_cov.sv
-!i122 4
-Z3 L0 1 0
-Z4 OL;L;2021.2_1;73
+w1758257793
+8tb/env/apb_agent.sv
+Z14 Ftb/env/apb_agent.sv
+Z15 Ftb/env/apb_generator.sv
+Z16 Ftb/env/apb_driver.sv
+Z17 Ftb/env/apb_monitor.sv
+Z18 Ftb/env/apb_cov.sv
+!i122 20
+R4
+R5
 31
-Z5 !s108 1758177899.000000
-!s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/env/apb_txn.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|
-Z6 !s90 -sv|-f|sim/run.f|
+Z19 !s108 1759718974.000000
+!s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|tb/pkg/apb_pkg.sv|
+Z20 !s90 -f|sim/run.f|
 !i113 0
-Z7 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z8 !s92 -sv +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z9 tCvgOpt 0
+Z21 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z22 !s92 +incdir+tb/pkg +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+Xapb_cov_sv_unit
+R11
+R1
+R12
+R13
+VZ<DBmRod<MfY<b8M[EP?L1
+r1
+!s85 0
+!i10b 1
+!s100 k8cRdk>JNhQIZAH]R<o8h0
+IZ<DBmRod<MfY<b8M[EP?L1
+!i103 1
+S1
+R0
+w1758255967
+8tb/env/apb_cov.sv
+R18
+!i122 20
+R4
+R5
+31
+R19
+Z23 !s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|tb/pkg/apb_pkg.sv|
+R20
+!i113 0
+R21
+R22
+R10
+Xapb_driver_sv_unit
+R11
+R1
+R1
+R12
+R13
+VZ4a4n2YkPjB4B=Jb>O7?f1
+r1
+!s85 0
+!i10b 1
+!s100 QS50[?ZAOkezcYeKk4;3=2
+IZ4a4n2YkPjB4B=Jb>O7?f1
+!i103 1
+S1
+R0
+w1758190924
+8tb/env/apb_driver.sv
+R16
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+Xapb_env_sv_unit
+R11
+R1
+R1
+R12
+R13
+V;Ve7Y<RBCAzaY6XDmhRR<1
+r1
+!s85 0
+!i10b 1
+!s100 Y^k7fbIF`2Of6A7E4bU6<2
+I;Ve7Y<RBCAzaY6XDmhRR<1
+!i103 1
+S1
+R0
+w1758257846
+8tb/env/apb_env.sv
+Z24 Ftb/env/apb_env.sv
+R14
+R15
+R16
+R17
+R18
+Z25 Ftb/env/apb_scoreboard.sv
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+Xapb_generator_sv_unit
+R1
+R1
+R12
+R13
+VQC9EfiP[DbgjjO[MX<ALP1
+r1
+!s85 0
+!i10b 1
+!s100 UZR1i8alCLm@Cm`MCkM8F0
+IQC9EfiP[DbgjjO[MX<ALP1
+!i103 1
+S1
+R0
+w1758191098
+8tb/env/apb_generator.sv
+R15
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
 Yapb_if
 R1
-R2
+R13
 !i10b 1
 !s100 Q4l?LMJejD?aEm:?Io@c11
-Il>f4od_bIIT^o`dckYP123
+I4ZC?SFo`b[7JfRzJ2?IV62
 S1
 R0
 w1758073571
 8tb/if/apb_if.sv
 Ftb/if/apb_if.sv
-!i122 4
-R3
-Z10 VDg1SIo80bB@j0V0VzS_@n1
+!i122 20
 R4
+Z26 VDg1SIo80bB@j0V0VzS_@n1
+R5
 r1
 !s85 0
 31
-R5
-Z11 !s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/env/apb_txn.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|
-R6
+R19
+R23
+R20
 !i113 0
-R7
-R8
-R9
+R21
+R22
+R10
+Xapb_monitor_sv_unit
+R11
+R1
+R1
+R12
+R13
+VG6HCd;[AY@?Y;2NjHXh@52
+r1
+!s85 0
+!i10b 1
+!s100 BoT]Wc^5MDW`2LgYhlH5W2
+IG6HCd;[AY@?Y;2NjHXh@52
+!i103 1
+S1
+R0
+w1758256529
+8tb/env/apb_monitor.sv
+R17
+R18
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+Xapb_pkg
+R1
+R13
+!i10b 1
+!s100 T6L1W28Aio?gELC^hkl1[0
+IJ5iD7MGiGZf^DfR;T[5aV0
+S1
+R0
+w1758252962
+R2
+R3
+!i122 20
+R4
+VJ5iD7MGiGZf^DfR;T[5aV0
+R5
+r1
+!s85 0
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
 vapb_protocol_sva
 R1
-R2
+R13
 !i10b 1
 !s100 moMU]i@f=n_hVa7@fbA?o0
-InZkPPm<H[?9Ce_9RJ^Fnc1
+IUiRh3<BD8Z=F^@>1I:GIz1
 S1
 R0
 w1758161036
 8tb/sva/apb_protocol_sva.sv
 Ftb/sva/apb_protocol_sva.sv
-!i122 4
+!i122 20
 L0 1 25
-R10
-R4
+R26
+R5
 r1
 !s85 0
 31
-R5
-R11
-R6
+R19
+R23
+R20
 !i113 0
+R21
+R22
+R10
+Xapb_scoreboard_sv_unit
+R11
+R1
+R1
+R12
+R13
+V;eg<CZWPb=nI39ePL<n571
+r1
+!s85 0
+!i10b 1
+!s100 YYz>S;^4>8i62FfP2`Me@1
+I;eg<CZWPb=nI39ePL<n571
+!i103 1
+S1
+R0
+w1758257421
+8tb/env/apb_scoreboard.sv
+R25
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+vapb_slave_generic
+R1
+R13
+!i10b 1
+!s100 o=h_=BcTDn^R48@1ZU_lC3
+IYcM8nEb0CO04N<NJ=bMl13
+S1
+R0
+w1758264030
+8rtl/apb_slave_generic.sv
+Frtl/apb_slave_generic.sv
+!i122 20
+L0 1 75
+R26
+R5
+r1
+!s85 0
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+Xapb_tb_pkg
+R1
+!s110 1758250933
+!i10b 1
+!s100 >zPbPFMZ@S[i42j;ER3@z3
+Ij>9oCGO]LA]9NTi=DQUQN3
+S1
+R0
+w1758181841
+R2
+R3
+!i122 5
+R4
+Vj>9oCGO]LA]9NTi=DQUQN3
+R5
+r1
+!s85 0
+31
+!s108 1758250933.000000
+R6
 R7
+!i113 0
 R8
 R9
+R10
 Xapb_txn_sv_unit
 R1
-R2
+!s110 1758177899
 Vld@HLZNQ;cg0oS;2h;N6L1
 r1
 !s85 0
@@ -102,13 +387,78 @@ w1758076323
 8tb/env/apb_txn.sv
 Ftb/env/apb_txn.sv
 !i122 4
-R3
 R4
-31
 R5
-R11
-R6
-!i113 0
+31
+!s108 1758177899.000000
+!s107 rtl/apb_slave_generic.sv|tb/top_tb.sv|tb/env/apb_env.sv|tb/env/apb_agent.sv|tb/env/apb_scoreboard.sv|tb/env/apb_monitor.sv|tb/env/apb_driver.sv|tb/env/apb_generator.sv|tb/env/apb_cov.sv|tb/env/apb_txn.sv|tb/sva/apb_protocol_sva.sv|tb/if/apb_if.sv|
 R7
+!i113 0
 R8
-R9
+!s92 -sv +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+vtop_tb
+R1
+R1
+R12
+DXx4 work 14 top_tb_sv_unit 0 22 hCHO9j_>>0fH^EX=Wk>o80
+R13
+R26
+r1
+!s85 0
+!i10b 1
+!s100 53Ob4anCaE=^Yg8fM4:Kz1
+I_:1n[M`g[NY@HcC@AAIRW2
+!s105 top_tb_sv_unit
+S1
+R0
+Z27 w1758263711
+Z28 8tb/top_tb.sv
+Z29 Ftb/top_tb.sv
+!i122 20
+L0 3 62
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10
+Xtop_tb_sv_unit
+R11
+R1
+R1
+R12
+R13
+VhCHO9j_>>0fH^EX=Wk>o80
+r1
+!s85 0
+!i10b 1
+!s100 Fm^V8EE76d6m]bmS<A^4Y2
+IhCHO9j_>>0fH^EX=Wk>o80
+!i103 1
+S1
+R0
+R27
+R28
+R29
+R24
+R14
+R15
+R16
+R17
+R18
+R25
+!i122 20
+R4
+R5
+31
+R19
+R23
+R20
+!i113 0
+R21
+R22
+R10

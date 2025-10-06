@@ -1,6 +1,6 @@
 
 import fifo_pkg::*;
-module FIFO #(
+module fifo #(
 	parameter int DATA_WIDTH = fifo_pkg::DATA_WIDTH,
 	parameter int DEPTH	 = fifo_pkg::STORAGE,
 	parameter int ADDR_WIDTH = $clog2(DEPTH)

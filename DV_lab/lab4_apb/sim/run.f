@@ -4,7 +4,6 @@ tb/pkg/apb_pkg.sv
 tb/if/apb_if.sv
 tb/sva/apb_protocol_sva.sv
 
-tb/env/apb_txn.sv
 tb/env/apb_cov.sv
 tb/env/apb_generator.sv
 tb/env/apb_driver.sv

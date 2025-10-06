@@ -6,5 +6,5 @@ env/04_fifo_monitor.sv
 env/05_fifo_scoreboard.sv
 env/06_fifo_checker.sv
 env/07_fifo_environment.sv
-rtl/FIFO.sv
+rtl/fifo.sv
 fifo_testbench.sv

@@ -9,7 +9,7 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/veron10/DV_at_VERON/DV_LAB/Lab1_FA_16b
+Z0 d/home/veron10/DV_at_VERON/DV_LAB/Lab1_FA_16b
 T_opt
 !s110 1756971718
 VbW6dl<Sfjga7]56ZNHXk?0
@@ -17,102 +17,103 @@ VbW6dl<Sfjga7]56ZNHXk?0
 =1-001cc447b718-68b942c6-4022c-c928
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
-Z0 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.2_1;73
+R0
 vfa_16b
-Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z2 !s110 1756971691
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1758271924
 !i10b 1
 !s100 AIlAgdig>d2E7bKJoIGnE0
 I2WZf=@Kie<RkPL1B:@VbF1
 S1
-Z3 d/home/veron10/DV_at_VERON/DV_lab/lab1_fa_16b
+Z4 d/home/veron10/DV_at_VERON/DV_lab/lab1_fa_16b
 w1756257235
 8RTL/fa_16b.sv
 FRTL/fa_16b.sv
-!i122 1
+!i122 2
 L0 1 28
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.2_1;73
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.2_1;73
 r1
 !s85 0
 31
-Z6 !s108 1756971691.000000
-Z7 !s107 TB/fa_16b_tb.sv|RTL/fa_16b.sv|RTL/fa_1b.sv|RTL/ha_1b.sv|
+Z7 !s108 1758271924.000000
+!s107 TB/fa_16b_tb.sv|RTL/fa_16b.sv|RTL/fa_1b.sv|RTL/ha_1b.sv|
 Z8 !s90 -f|compile.f|
 !i113 0
 Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R0
-vfa_16b_tb
 R1
+vfa_16b_tb
 R2
+R3
 !i10b 1
 !s100 Q^hOo`jF`OYnS<@VmaO<J1
 I9`3=@CYS^5ZL>^_[VzOQo2
 S1
-R3
+R4
 w1756094507
 8TB/fa_16b_tb.sv
 FTB/fa_16b_tb.sv
-!i122 1
+!i122 2
 L0 1 53
-R4
 R5
+R6
 r1
 !s85 0
 31
-R6
 R7
+Z10 !s107 TB/fa_16b_tb.sv|RTL/fa_16b.sv|RTL/fa_1b.sv|RTL/ha_1b.sv|
 R8
 !i113 0
 R9
-R0
-vfa_1b
 R1
+vfa_1b
 R2
+R3
 !i10b 1
 !s100 KMSI>i:V>X5R[;o_Mj;F]0
 IgLW9UjQlZzgi5=daXLZ0n0
 S1
-R3
-Z10 w1756091675
+R4
+Z11 w1756091675
 8RTL/fa_1b.sv
 FRTL/fa_1b.sv
-!i122 1
+!i122 2
 L0 1 15
-R4
 R5
+R6
 r1
 !s85 0
 31
-R6
 R7
+R10
 R8
 !i113 0
 R9
-R0
-vha_1b
 R1
+vha_1b
 R2
+R3
 !i10b 1
 !s100 <TI@H`n8@4lfVecfhR<EM0
 IJTfd:db:N>@A@6TT370IZ0
 S1
-R3
-R10
+R4
+R11
 8RTL/ha_1b.sv
 FRTL/ha_1b.sv
-!i122 1
+!i122 2
 L0 1 11
-R4
 R5
+R6
 r1
 !s85 0
 31
-R6
 R7
+R10
 R8
 !i113 0
 R9
-R0
+R1

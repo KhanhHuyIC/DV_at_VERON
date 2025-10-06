@@ -1,4 +1,4 @@
-package	apb_tb_pkg;
+package	apb_pkg;
 
 //=====Transaction=====
 class apb_txn;

@@ -1,4 +1,7 @@
 import	apb_pkg::*;
+include	"apb_generator.sv";
+include "apb_driver.sv";
+include "apb_monitor.sv";
 
 class	apb_agent;
 	//Components
@@ -12,7 +15,7 @@ class	apb_agent;
 
 	//Mailboxes
 	mailbox	#(apb_txn) gen2drv;
-	mailbox #(apb_txn) mon2drv;
+	mailbox #(apb_txn) mon2sb;
 
 	function new(virtual apb_if.drv vd, virtual apb_if.mon vm, mailbox #(apb_txn) m2s);
 		vif_drv = vd;

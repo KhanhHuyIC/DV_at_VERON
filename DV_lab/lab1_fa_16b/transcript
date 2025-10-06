@@ -1,6 +1,6 @@
 # vsim -c work.fa_16b_tb 
-# Start time: 14:41:58 on Sep 04,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 15:52:18 on Sep 19,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2021.2_1 linux_x86_64 May 15 2021
 # //
@@ -39,5 +39,5 @@
 # [PASS] a=65b6, b=f9c6, cin=0 => sum=5f7c, cout=1
 # ** Note: $finish    : TB/fa_16b_tb.sv(51)
 #    Time: 200 ns  Iteration: 0  Instance: /fa_16b_tb
-# End time: 14:42:03 on Sep 04,2025, Elapsed time: 0:00:05
+# End time: 15:52:21 on Sep 19,2025, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0

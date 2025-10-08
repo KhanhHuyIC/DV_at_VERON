@@ -8,7 +8,8 @@ class	apb_cov;
 		option.per_instance = 1;
 
 		//Type of transaction
-		cp_dir: coverpoint vif.PWRITE iff (vif.PSEL && vif.PENABLE && vif.PREADY) {
+		cp_dir: coverpoint vif.PWRITE
+		iff (vif.PSEL && vif.PENABLE && vif.PREADY) {
 			bins	READ	= {0};
 			bins	WRITE	= {1};
 			}
@@ -20,14 +21,16 @@ class	apb_cov;
 			bins	two  = {2};
 			bins	many = {[3:15]};
 			}
-		cp_addr: coverpoint vif.PADDR[7:2] iff (vif.PSEL && vif.PENABLE && vif.PREADY){
+		cp_addr: coverpoint vif.PADDR[7:2]
+		iff (vif.PSEL && vif.PENABLE && vif.PREADY){
 			bins	low	= {[0:15]};
-			bins	mid	= {[16:63]};
-			bins	high	= {[64:127]};
+			bins	mid	= {[16:31]};
+			bins	high	= {[31:63]};
 			bins	other	= default;
 			}
 		//Error response
-		cp_err:	coverpoint vif.PSLVERR iff (vif.PSEL && vif.PENABLE && vif.PREADY);
+		cp_err:	coverpoint vif.PSLVERR
+		iff (vif.PSEL && vif.PENABLE && vif.PREADY);
 
 		//Basic cross
 		x_dir_wait	: cross	cp_dir, cp_wait;

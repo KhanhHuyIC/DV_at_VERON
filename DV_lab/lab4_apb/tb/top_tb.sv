@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-include	"apb_env.sv";
+`include "apb_env.sv"
 	module top_tb;
 		localparam	ADDR_W	= 12;
 		localparam	DATA_W	= 32;
@@ -46,6 +46,7 @@ include	"apb_env.sv";
 		int	N_TXN = 200;
 
 		initial begin
+			real inst_cov;
 			//Reset
 			repeat(5) @(posedge PCLK);
 			PRESETn = 1;
@@ -56,7 +57,9 @@ include	"apb_env.sv";
 
 			//wait scoreboard
 			wait (env.sb.done_flag == 1);
+			inst_cov = env.agent.mon.cov.cg_apb.get_inst_coverage();
 			repeat (5) @(posedge PCLK);
+			$display("[TB] Functional coverage (cg_apb): %0.2f%%", inst_cov);
 			$display("[TB] Complete %0d transaction. Finishing simulation.", N_TXN);
 			$finish;
 		end

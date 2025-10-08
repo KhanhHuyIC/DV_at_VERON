@@ -1,4 +1,4 @@
-+incdir+tb/pkg  +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl
++incdir+tb/pkg +incdir+tb/if +incdir+tb/sva +incdir+tb/env +incdir+rtl
 
 tb/pkg/apb_pkg.sv
 tb/if/apb_if.sv

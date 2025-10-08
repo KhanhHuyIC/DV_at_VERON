@@ -2,7 +2,7 @@ module	apb_protocol_sva (apb_if.mon vif);
 	//Control
 	property ctrl_stable_p;
 		@(posedge vif.PCLK) disable iff(!vif.PRESETn)
-		(vif.PSEL && vif.PENABLE && !vif.PREADAY) |-> $stable({vif.PADDR, vif.PWRITE, vif.PPROT});
+		(vif.PSEL && vif.PENABLE && !vif.PREADY) |-> $stable({vif.PADDR, vif.PWRITE, vif.PPROT});
 	endproperty
 
 	assert property (ctrl_stable_p) else $error ("APB controls changed during ACCESS");

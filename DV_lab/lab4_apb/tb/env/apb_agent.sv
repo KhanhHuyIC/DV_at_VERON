@@ -1,7 +1,7 @@
 import	apb_pkg::*;
-include	"apb_generator.sv";
-include "apb_driver.sv";
-include "apb_monitor.sv";
+`include "apb_generator.sv"
+`include "apb_driver.sv"
+`include "apb_monitor.sv"
 
 class	apb_agent;
 	//Components

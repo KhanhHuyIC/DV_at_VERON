@@ -5,7 +5,7 @@ class	apb_driver;
 	mailbox	#(apb_txn)	gen2drv;
 
 	function new(virtual apb_if.drv v, mailbox #(apb_txn) m);
-		vif = v;
+		vif	= v;
 		gen2drv = m;
 	endfunction
 
@@ -34,9 +34,10 @@ class	apb_driver;
 			vif.cb.PSTRB	<= tr.strb;
 
 			//ACCESS
+			@(vif.cb);
 			vif.cb.PENABLE	<= 1;
 			//wait for PREADY = 1
-			do @(vif.cb); while (!vif.PREADY);
+			do @(vif.cb); while (!vif.cb.PREADY);
 
 			//TEARDOWN
 			@(vif.cb);

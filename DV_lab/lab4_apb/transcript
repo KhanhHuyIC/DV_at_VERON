@@ -1,14 +1,231 @@
-# vsim -c work.top_tb 
-# Start time: 13:42:05 on Sep 19,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error (suppressible): tb/env/apb_monitor.sv(28): (vopt-7063) Failed to find 'mob2sb' in hierarchical name '$root.mob2sb.put'.
-#         Region: top_tb_sv_unit
-# ** Error (suppressible): tb/sva/apb_protocol_sva.sv(5): (vopt-7063) Failed to find 'PREADAY' in hierarchical name 'vif.PREADAY'.
-#         Region: top_tb.sva
-# ** Error (suppressible): rtl/apb_slave_generic.sv(25): (vopt-7063) Failed to find 'WAIT_STAES' in hierarchical name 'WAIT_STAES'.
-#         Region: top_tb.dut
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=0.
-# Error loading design
-# End time: 13:42:05 on Sep 19,2025, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 0
+# vsim -c -coverage work.top_tb "+VERBOSE" -do "run -all; 	coverage report -cvg -assert -stdout; 	quit -f" 
+# Start time: 13:13:01 on Oct 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.apb_pkg(fast)
+# Loading work.top_tb_sv_unit(fast)
+# Loading work.top_tb(fast)
+# Loading work.apb_protocol_sva(fast)
+# Loading work.apb_if(fast)
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# run -all
+# [MON] [75000] RD addr = 0x2c0, wdata = 0x0f9ea57e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [125000] WR addr = 0x0a4, wdata = 0xe4b44547, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [175000] WR addr = 0x164, wdata = 0x98280703, rdata = 0x00000000, strb = f, err = 0
+# [MON] [225000] WR addr = 0x290, wdata = 0x424ccf8a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [275000] WR addr = 0x050, wdata = 0x692963cd, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [325000] WR addr = 0x294, wdata = 0x01972ce9, rdata = 0x00000000, strb = f, err = 0
+# [MON] [375000] RD addr = 0x0a0, wdata = 0x85646f66, rdata = 0x00000000, strb = f, err = 0
+# [MON] [425000] WR addr = 0x138, wdata = 0xa0c2422f, rdata = 0x00000000, strb = c, err = 0
+# [MON] [475000] WR addr = 0x3e4, wdata = 0x92824818, rdata = 0x00000000, strb = f, err = 0
+# [MON] [525000] RD addr = 0x25c, wdata = 0xaff24f7e, rdata = 0x00000000, strb = c, err = 0
+# [MON] [575000] RD addr = 0x130, wdata = 0xe5385814, rdata = 0x00000000, strb = f, err = 0
+# [MON] [625000] RD addr = 0x378, wdata = 0x88e80a03, rdata = 0x00000000, strb = f, err = 0
+# [MON] [675000] WR addr = 0x280, wdata = 0xdf88c615, rdata = 0x00000000, strb = c, err = 0
+# [MON] [725000] RD addr = 0x284, wdata = 0x7d260b7f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [775000] WR addr = 0x144, wdata = 0xf08b1336, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [825000] RD addr = 0x088, wdata = 0x4f8200c9, rdata = 0x00000000, strb = f, err = 0
+# [MON] [875000] RD addr = 0x144, wdata = 0x2267b3f0, rdata = 0x00001336, strb = f, err = 0
+# [MON] [925000] RD addr = 0x04c, wdata = 0x381f698a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [975000] RD addr = 0x078, wdata = 0x64c080ec, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [1025000] WR addr = 0x240, wdata = 0x4f772aea, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1075000] WR addr = 0x2dc, wdata = 0xac038765, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1125000] WR addr = 0x3d4, wdata = 0x45cc5926, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1175000] WR addr = 0x028, wdata = 0x92e4501f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1225000] WR addr = 0x360, wdata = 0x7f08a5fd, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1275000] WR addr = 0x3e4, wdata = 0x5f5e86a0, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [1325000] RD addr = 0x38c, wdata = 0x5853af1c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1375000] RD addr = 0x094, wdata = 0xbdb19831, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [1425000] RD addr = 0x2d8, wdata = 0xbbf302a2, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1475000] WR addr = 0x2e4, wdata = 0xa5b2b2fe, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1525000] RD addr = 0x114, wdata = 0x0431ad5b, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1575000] RD addr = 0x2a4, wdata = 0x39045aae, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1625000] RD addr = 0x254, wdata = 0x7596524f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1675000] WR addr = 0x0e0, wdata = 0x793f0b48, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1725000] WR addr = 0x068, wdata = 0x120c4e24, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1775000] RD addr = 0x000, wdata = 0xb202f5c4, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1825000] RD addr = 0x100, wdata = 0xf77b61e3, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [1875000] WR addr = 0x1cc, wdata = 0x3056b72b, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1925000] RD addr = 0x270, wdata = 0x06909a44, rdata = 0x00000000, strb = f, err = 0
+# [MON] [1975000] RD addr = 0x2d4, wdata = 0x2fa38d37, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2025000] WR addr = 0x100, wdata = 0xda54e698, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2075000] RD addr = 0x28c, wdata = 0x4e291270, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2125000] WR addr = 0x038, wdata = 0x50e88f97, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2175000] WR addr = 0x2f0, wdata = 0x750d5d51, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [2225000] RD addr = 0x078, wdata = 0x9304ba3f, rdata = 0x00000000, strb = c, err = 0
+# [MON] [2275000] WR addr = 0x204, wdata = 0x376fc206, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2325000] WR addr = 0x10c, wdata = 0x2e529958, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2375000] RD addr = 0x018, wdata = 0xf87b0381, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2425000] RD addr = 0x0f8, wdata = 0x1f8df09e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2475000] RD addr = 0x318, wdata = 0x2fe475a8, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2525000] WR addr = 0x2fc, wdata = 0xe413ab68, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2575000] WR addr = 0x108, wdata = 0x8d05b3a5, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [2625000] WR addr = 0x1c4, wdata = 0x532835e3, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [2675000] RD addr = 0x314, wdata = 0xf1bbcc22, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2725000] RD addr = 0x298, wdata = 0x9fc61332, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2775000] WR addr = 0x3bc, wdata = 0x5ae0d4e0, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [2825000] RD addr = 0x060, wdata = 0x4b2d394c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2875000] WR addr = 0x18c, wdata = 0xd94c1234, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2925000] RD addr = 0x168, wdata = 0x8f5a7164, rdata = 0x00000000, strb = f, err = 0
+# [MON] [2975000] WR addr = 0x2fc, wdata = 0x1e26323f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3025000] RD addr = 0x258, wdata = 0x4f1596c7, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3075000] WR addr = 0x1f4, wdata = 0x9caebe5d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3125000] WR addr = 0x2d0, wdata = 0x3b4ed627, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3175000] RD addr = 0x35c, wdata = 0xa388f2b7, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3225000] RD addr = 0x1d8, wdata = 0xdb645289, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3275000] RD addr = 0x1b0, wdata = 0xb98b1927, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3325000] RD addr = 0x074, wdata = 0xbce6e499, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3375000] WR addr = 0x228, wdata = 0xb774a2c8, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [3425000] WR addr = 0x128, wdata = 0x5273ae94, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3475000] RD addr = 0x308, wdata = 0xabfcffa5, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3525000] RD addr = 0x30c, wdata = 0x786ebd50, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3575000] RD addr = 0x3e8, wdata = 0xeab7a2a8, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3625000] RD addr = 0x330, wdata = 0x5cfc903f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3675000] WR addr = 0x25c, wdata = 0x0d98da02, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3725000] WR addr = 0x2d4, wdata = 0xe6bf4dd5, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3775000] WR addr = 0x1b4, wdata = 0xdc1ba38c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3825000] RD addr = 0x0ac, wdata = 0xa0a2356c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3875000] RD addr = 0x224, wdata = 0xb328d20e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3925000] WR addr = 0x0b0, wdata = 0x3bb6a50c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [3975000] WR addr = 0x064, wdata = 0x547c30ce, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4025000] RD addr = 0x0b4, wdata = 0x31696f0e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4075000] RD addr = 0x070, wdata = 0x0f4cd0f0, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4125000] WR addr = 0x324, wdata = 0xadd30ab2, rdata = 0x00000000, strb = c, err = 0
+# [MON] [4175000] RD addr = 0x39c, wdata = 0x23532e58, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [4225000] WR addr = 0x2a0, wdata = 0xee056278, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [4275000] WR addr = 0x1e0, wdata = 0x639d74f0, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [4325000] WR addr = 0x340, wdata = 0xb24500e6, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4375000] RD addr = 0x344, wdata = 0x5f2dc5b2, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4425000] WR addr = 0x0f4, wdata = 0x5ac536f7, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4475000] WR addr = 0x0f8, wdata = 0x6c0242ac, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [4525000] RD addr = 0x074, wdata = 0xe5bd42b0, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4575000] WR addr = 0x33c, wdata = 0x45d8febd, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4625000] WR addr = 0x1c8, wdata = 0x3c102266, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4675000] RD addr = 0x270, wdata = 0x4ef0f329, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [4725000] WR addr = 0x0c4, wdata = 0x21480f1b, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4775000] WR addr = 0x28c, wdata = 0xe7396d9b, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [4825000] WR addr = 0x224, wdata = 0xf80b38b6, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4875000] RD addr = 0x37c, wdata = 0xc96bb5e8, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4925000] WR addr = 0x338, wdata = 0x64763a39, rdata = 0x00000000, strb = f, err = 0
+# [MON] [4975000] WR addr = 0x390, wdata = 0xbca5ca89, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5025000] RD addr = 0x2ec, wdata = 0x92eeec2d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5075000] RD addr = 0x3f8, wdata = 0x0abaf4c4, rdata = 0x00000000, strb = c, err = 0
+# [MON] [5125000] RD addr = 0x210, wdata = 0x172b0c7a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5175000] RD addr = 0x270, wdata = 0xa0c2024d, rdata = 0x00000000, strb = c, err = 0
+# [MON] [5225000] WR addr = 0x324, wdata = 0xdbdb08cc, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5275000] RD addr = 0x218, wdata = 0x29fa461a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5325000] RD addr = 0x128, wdata = 0xca3b8b9f, rdata = 0x5273ae94, strb = f, err = 0
+# [MON] [5375000] RD addr = 0x1d8, wdata = 0x3aaed348, rdata = 0x00000000, strb = c, err = 0
+# [MON] [5425000] WR addr = 0x0c8, wdata = 0x2216a499, rdata = 0x00000000, strb = c, err = 0
+# [MON] [5475000] RD addr = 0x3c4, wdata = 0x22eb2d9e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5525000] WR addr = 0x398, wdata = 0xdb68224a, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [5575000] RD addr = 0x3f8, wdata = 0x9db5b4c9, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5625000] RD addr = 0x0f8, wdata = 0x37560de8, rdata = 0x000042ac, strb = f, err = 0
+# [MON] [5675000] WR addr = 0x2c0, wdata = 0x740ce548, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5725000] WR addr = 0x314, wdata = 0x763f127f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5775000] RD addr = 0x1c0, wdata = 0xc4785ec2, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5825000] WR addr = 0x3bc, wdata = 0x9c62685d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5875000] WR addr = 0x314, wdata = 0xb10ff45b, rdata = 0x00000000, strb = f, err = 0
+# [MON] [5925000] RD addr = 0x2d0, wdata = 0x4f73110d, rdata = 0x3b4ed627, strb = 1, err = 0
+# [MON] [5975000] RD addr = 0x3a4, wdata = 0x6431171d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6025000] WR addr = 0x258, wdata = 0xd2ae9ad2, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [6075000] RD addr = 0x040, wdata = 0x62647515, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6125000] WR addr = 0x328, wdata = 0x1eeef2e8, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6175000] WR addr = 0x260, wdata = 0x1cbbcdbb, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6225000] WR addr = 0x34c, wdata = 0x8688adf4, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6275000] RD addr = 0x178, wdata = 0x460f4ddd, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6325000] WR addr = 0x190, wdata = 0xae67f254, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6375000] RD addr = 0x064, wdata = 0xc2c0f714, rdata = 0x547c30ce, strb = 1, err = 0
+# [MON] [6425000] WR addr = 0x26c, wdata = 0xdb701592, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [6475000] RD addr = 0x210, wdata = 0x8fa3d621, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6525000] WR addr = 0x358, wdata = 0xd4e56487, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [6575000] RD addr = 0x0cc, wdata = 0xd13decc2, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [6625000] WR addr = 0x3e0, wdata = 0xb14acc1f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6675000] RD addr = 0x398, wdata = 0x653c20d2, rdata = 0x0000224a, strb = f, err = 0
+# [MON] [6725000] RD addr = 0x1e8, wdata = 0xa30ae63c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6775000] WR addr = 0x004, wdata = 0x77d54e0f, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [6825000] WR addr = 0x300, wdata = 0x0288f9a8, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6875000] WR addr = 0x1fc, wdata = 0xeae8060a, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [6925000] RD addr = 0x2b4, wdata = 0xb736076a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [6975000] RD addr = 0x068, wdata = 0x2cc0a240, rdata = 0x120c4e24, strb = f, err = 0
+# [MON] [7025000] RD addr = 0x01c, wdata = 0xd425c187, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7075000] WR addr = 0x1b0, wdata = 0x0f5f6fb2, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7125000] RD addr = 0x054, wdata = 0xbc3459aa, rdata = 0x00000000, strb = c, err = 0
+# [MON] [7175000] WR addr = 0x3bc, wdata = 0x1c865901, rdata = 0x00000000, strb = c, err = 0
+# [MON] [7225000] WR addr = 0x1cc, wdata = 0xae50b937, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7275000] RD addr = 0x05c, wdata = 0x8b4a7b6c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7325000] WR addr = 0x294, wdata = 0x972f6901, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7375000] RD addr = 0x118, wdata = 0x9fa8321a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7425000] RD addr = 0x308, wdata = 0x2b1e8f78, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [7475000] RD addr = 0x2ac, wdata = 0xc0d7d974, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7525000] WR addr = 0x350, wdata = 0x14f0bc92, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [7575000] WR addr = 0x008, wdata = 0xefb55d8e, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7625000] WR addr = 0x168, wdata = 0x9602dfef, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [7675000] RD addr = 0x338, wdata = 0x8b12f6f4, rdata = 0x64763a39, strb = f, err = 0
+# [MON] [7725000] RD addr = 0x23c, wdata = 0x4d56ead1, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [7775000] WR addr = 0x2e0, wdata = 0xd87edc36, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7825000] RD addr = 0x138, wdata = 0x249d0bb8, rdata = 0xa0c20000, strb = f, err = 0
+# [MON] [7875000] WR addr = 0x13c, wdata = 0xcf7b7ec6, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [7925000] WR addr = 0x298, wdata = 0x7cd16236, rdata = 0x00000000, strb = f, err = 0
+# [MON] [7975000] WR addr = 0x28c, wdata = 0x8e6ed90a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8025000] RD addr = 0x2e0, wdata = 0x18885340, rdata = 0xd87edc36, strb = f, err = 0
+# [MON] [8075000] WR addr = 0x0a8, wdata = 0xee84c727, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [8125000] RD addr = 0x0cc, wdata = 0xacd27d6c, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8175000] RD addr = 0x01c, wdata = 0xf27d51cd, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [8225000] WR addr = 0x1dc, wdata = 0x131e629d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8275000] RD addr = 0x334, wdata = 0x0acb08fd, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8325000] RD addr = 0x3bc, wdata = 0xdd6ea3dc, rdata = 0x1c86685d, strb = f, err = 0
+# [MON] [8375000] WR addr = 0x1e8, wdata = 0xeaf7399a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8425000] WR addr = 0x010, wdata = 0xfbe83cec, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [8475000] RD addr = 0x394, wdata = 0x3228f281, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8525000] WR addr = 0x20c, wdata = 0x084fa0ef, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8575000] WR addr = 0x1b0, wdata = 0x90748cc3, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8625000] WR addr = 0x32c, wdata = 0xc463e382, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8675000] RD addr = 0x0d4, wdata = 0xa937f6ef, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8725000] WR addr = 0x1b8, wdata = 0xdb02476d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [8775000] RD addr = 0x2d8, wdata = 0xdcdd9167, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8825000] WR addr = 0x03c, wdata = 0xec976986, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8875000] WR addr = 0x1b4, wdata = 0x3e5e3d01, rdata = 0x00000000, strb = c, err = 0
+# [MON] [8925000] RD addr = 0x3e4, wdata = 0xbd935bd0, rdata = 0x928248a0, strb = 1, err = 0
+# [MON] [8975000] RD addr = 0x1b8, wdata = 0xb74ca76f, rdata = 0xdb02476d, strb = f, err = 0
+# [MON] [9025000] WR addr = 0x3c8, wdata = 0xf4e68c98, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9075000] RD addr = 0x1f4, wdata = 0xc48eaa78, rdata = 0x9caebe5d, strb = f, err = 0
+# [MON] [9125000] WR addr = 0x35c, wdata = 0x67bd8ede, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9175000] WR addr = 0x094, wdata = 0x8843ce69, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9225000] WR addr = 0x04c, wdata = 0xd315ddf9, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9275000] WR addr = 0x348, wdata = 0xd9102e3a, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9325000] WR addr = 0x100, wdata = 0xf64b0afe, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9375000] WR addr = 0x094, wdata = 0x79c20db7, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9425000] WR addr = 0x1d8, wdata = 0xccb648bf, rdata = 0x00000000, strb = c, err = 0
+# [MON] [9475000] WR addr = 0x260, wdata = 0x52627c11, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9525000] WR addr = 0x2f4, wdata = 0xb811f18d, rdata = 0x00000000, strb = 1, err = 0
+# [MON] [9575000] RD addr = 0x154, wdata = 0x5c50783c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9625000] RD addr = 0x09c, wdata = 0x98120c00, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9675000] WR addr = 0x2d4, wdata = 0x35f9da2c, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9725000] WR addr = 0x07c, wdata = 0xd88fc29f, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9775000] WR addr = 0x228, wdata = 0x22165a6d, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9825000] RD addr = 0x0ac, wdata = 0x6a3e2236, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9875000] WR addr = 0x1fc, wdata = 0xe7cbd41c, rdata = 0x00000000, strb = 3, err = 0
+# [MON] [9925000] WR addr = 0x200, wdata = 0xa92284bf, rdata = 0x00000000, strb = f, err = 0
+# [MON] [9975000] RD addr = 0x338, wdata = 0xa175e0cd, rdata = 0x64763a39, strb = 3, err = 0
+# [MON] [10025000] WR addr = 0x030, wdata = 0x0f255303, rdata = 0x00000000, strb = 1, err = 0
+# [TB] Functional coverage (cg_apb): 64.58%
+# [TB] Complete 200 transaction. Finishing simulation.
+# ** Note: $finish    : tb/top_tb.sv(64)
+#    Time: 10075 ns  Iteration: 1  Instance: /top_tb
+# End time: 13:13:06 on Oct 08,2025, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 1

@@ -22,7 +22,7 @@ module apb_slave_generic #(
 
 	//Ready module: parameterizable wait-states
 	localparam int WAIT_STATES = 0;
-	logic	[$clog2(WAIT_STAES+1)-1:0] wait_cnt;
+	logic	[$clog2(WAIT_STATES+1)-1:0] wait_cnt;
 
 	typedef enum logic [1:0] {IDLE, SETUP, ACCESS} state_e;
 	state_e	state, nstate;

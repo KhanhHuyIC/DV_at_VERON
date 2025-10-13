@@ -1,6 +1,6 @@
 # vsim -c -coverage work.top_tb "+VERBOSE" -do "run -all; 	coverage report -cvg -assert -stdout; 	quit -f" 
-# Start time: 13:13:01 on Oct 08,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 14:28:45 on Oct 08,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2021.2_1 linux_x86_64 May 15 2021
 # //
@@ -227,5 +227,5 @@
 # [TB] Complete 200 transaction. Finishing simulation.
 # ** Note: $finish    : tb/top_tb.sv(64)
 #    Time: 10075 ns  Iteration: 1  Instance: /top_tb
-# End time: 13:13:06 on Oct 08,2025, Elapsed time: 0:00:05
+# End time: 14:28:49 on Oct 08,2025, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1
